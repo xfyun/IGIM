@@ -102,9 +102,9 @@
 	-(void) login:(XMLoginParam *)param succ:(XMSucc)succ fail:(XMFail)fail
 	
 	功能：		异步方式实现用户登录。
-	参数：		parm，包含用户名，token，apid。
-			  succ 成功回调
- 			  fail失败回调
+	参数：		parm，包含用户名，token，appid
+			succ 成功回调
+			fail失败回调
 	结果返回：错误信息
 
 >用户下线接口
@@ -113,7 +113,7 @@
 	
 	功能：		登出
 	参数：		succ 成功回调
- 			  fail失败回调
+			fail失败回调
 	结果返回：无
 
 >构建消息
@@ -137,7 +137,7 @@
 
 >发送消息
 	
-	-(int) sendMessage(XMMessage)msg succ:(XMSucc)succ fail(XMFail)fail
+	-(int) sendMessage(XMMessage)msg succ:(XMSucc)succ fail:(XMFail)fail
 	
 	功能：		发送消息
 	参数：		msg 	消息
@@ -147,11 +147,11 @@
 
 >获取当前登录的用户
 
-	-(void) asyncGetContacts:(void (^)(NSArray*)successBlock failue:(void)(^)(NSError*)failureBlock)
+	-(NSString* ) getLoginUser
 	
 	功能： 	获取当前登录的用户
 	参数： 	无 
-	结果返回：通过block返回NSArray
+	结果返回：当前登陆的用户ID
 
 >获取离线消息
 
