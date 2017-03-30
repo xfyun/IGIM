@@ -1,22 +1,22 @@
-#概述
+# 概述
 > 为游戏开发打造的即时通讯SDK（IM SDK），让游戏开发者只需调用IM SDK提供的接口，即可快速在手游中实现聊天、群组聊天、文字、表情、语音等多项功能。
 
-#四步极快速集成游戏语音
+# 四步极快速集成游戏语音
 
-##步骤
+## 步骤
 1. 获取IMLib
 2. 获取Appid
 3. 导入IMLib,配置AndroidManifest.xml
 4. 调用IMClient提供的接口，实现游戏内即时消息，语音识别等功能
 
-##具体实施
-###获取IMLib
+## 具体实施
+### 获取IMLib
 登录讯飞开放平台 - 游戏解决方案（<http://game.xfyun.cn/>），进入SDK下载，下载IMLib。
 
-###获取Appid
+### 获取Appid
 登录讯飞开放平台 - 游戏解决方案（<http://game.xfyun.cn/>），选择/创建应用并且接入游戏解决方案，进入“控制台”查看对应Appid。
 
-###导入IMLib,配置AndroidManifest.xml
+### 导入IMLib,配置AndroidManifest.xml
 1. 导入IMLib.jar包,请自行根据IDE搜索导入jar包的方式，并添加依赖。
 2. 配置AndroidManifest.xml
  
@@ -61,7 +61,7 @@
 
 
 
-###调用IMClient接口，实现消息传递功能
+### 调用IMClient接口，实现消息传递功能
 
 >IMClient初始化
 
