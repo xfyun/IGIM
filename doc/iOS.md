@@ -160,10 +160,53 @@
 	-(void) onXMAudioPlayerDidFail: (NSError *)error;
 	- (void) onXMAudioPlayerSoundPower: (float)power;
 	
->构建单聊消息（此处展示的是构建文本，语音及语音转文本消息，其他消息构建请参照接口文件说明）
+>构建消息（此处展示的是构建文本，语音及语音转文本消息，其他消息构建请参照接口文件说明）
 
-	//构建文本消息
-		//构建文本消息体	
+	文本消息：
+		//构建文本消息体
+		XMTextMessageBody *textMessageBody = [[XMTextMessageBody alloc]init];
+		textMessageBody.text = @"......";
+		
+		//构建文本消息
+		XMMessage *textMessage = [[XMMessage alloc] initWithConversation: self.conversation 
+								msgType: XM_MSG_TYPE_Text 	
+								postType: XM_POST_TYPE_DEFAULT 
+								msgId: nil 	//可不设						
+								sender: nil	//可不设						
+								body: textMessageBody];
+	
+	
+	
+	
+	
+	语音消息：
+		//构建语音消息体
+		XMTextMessageBody *textMessageBody = [[XMTextMessageBody alloc]init];
+		textMessageBody.text = @"......";
+		
+		//构建语音消息
+		XMMessage *textMessage = [[XMMessage alloc] initWithConversation: self.conversation 
+								msgType: XM_MSG_TYPE_Text 	
+								postType: XM_POST_TYPE_DEFAULT 
+								msgId: nil 	//可不设						
+								sender: nil	//可不设						
+								body: textMessageBody];
+	
+	
+	
+	
+	语音转文本消息：
+		//构建语音转文本消息体
+		XMTextMessageBody *textMessageBody = [[XMTextMessageBody alloc]init];
+		textMessageBody.text = @"......";
+		
+		//构建语音转文本消息
+		XMMessage *textMessage = [[XMMessage alloc] initWithConversation: self.conversation 
+								msgType: XM_MSG_TYPE_Text 	
+								postType: XM_POST_TYPE_DEFAULT 
+								msgId: nil 	//可不设						
+								sender: nil	//可不设						
+								body: textMessageBody];
 	
 	
 	-(instancetype)initWithConversation:(XMConversation*)conversation
