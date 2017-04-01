@@ -163,6 +163,7 @@
 >构建消息（此处展示的是构建文本，语音和语音转文本消息，其他消息构建请参照接口文件说明）
 
 	文本消息：
+	
 		//构建文本消息体
 		XMTextMessageBody *textMessageBody = [[XMTextMessageBody alloc]init];
 		textMessageBody.text = @"......";
@@ -177,18 +178,18 @@
 	
 	
 	语音消息或语音转文本消息：
+	
 		//构建语音消息体
 		XMSoundMessageBody *soundMessageBody = [[XMSoundMessageBody alloc] initWithLocalPath: audioLocalPath displayName: @"[语音]"];
 		soundMessageBody.duration = duration;	//音频时长
 		
 		//构建语音消息
 		XMMessage *soundMessageBody = [[XMMessage alloc] initWithConversation: self.conversation 
-									 msgType: XM_MSG_TYPE_Sound 	
-									postType: XM_POST_TYPE_DEFAULT	//语音消息：XM_POST_TYPE_DEFAULT，语音转文本消息：XM_POST_TYPE_IAT 
-									   msgId: nil 	//可不设
-									  sender: nil	//可不设
-									    body: soundMessageBody];
-
+									      msgType: XM_MSG_TYPE_Sound 	
+									     postType: XM_POST_TYPE_DEFAULT	//语音消息：XM_POST_TYPE_DEFAULT，语音转文本消息：XM_POST_TYPE_IAT 
+									        msgId: nil 	//可不设
+									       sender: nil	//可不设
+									         body: soundMessageBody];
 
 
 >发送消息
