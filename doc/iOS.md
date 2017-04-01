@@ -160,7 +160,7 @@
 	-(void) onXMAudioPlayerDidFail: (NSError *)error;
 	- (void) onXMAudioPlayerSoundPower: (float)power;
 	
->构建消息（此处展示的是构建文本，语音及语音转文本消息，其他消息构建请参照接口文件说明）
+>构建消息（此处展示的是构建文本，语音和语音转文本消息，其他消息构建请参照接口文件说明）
 
 	文本消息：
 		//构建文本消息体
@@ -169,61 +169,26 @@
 		
 		//构建文本消息
 		XMMessage *textMessage = [[XMMessage alloc] initWithConversation: self.conversation 
-								msgType: XM_MSG_TYPE_Text 	
-								postType: XM_POST_TYPE_DEFAULT 
-								msgId: nil 	//可不设						
-								sender: nil	//可不设						
-								body: textMessageBody];
+									 msgType: XM_MSG_TYPE_Text 	
+									postType: XM_POST_TYPE_DEFAULT 
+									   msgId: nil 	//可不设
+									  sender: nil	//可不设
+									    body: textMessageBody];
 	
 	
-	
-	
-	
-	语音消息：
+	语音消息或语音转文本消息：
 		//构建语音消息体
-		XMTextMessageBody *textMessageBody = [[XMTextMessageBody alloc]init];
-		textMessageBody.text = @"......";
+		XMSoundMessageBody *soundMessageBody = [[XMSoundMessageBody alloc] initWithLocalPath: audioLocalPath displayName: @"[语音]"];
+		soundMessageBody.duration = duration;	//音频时长
 		
 		//构建语音消息
-		XMMessage *textMessage = [[XMMessage alloc] initWithConversation: self.conversation 
-								msgType: XM_MSG_TYPE_Text 	
-								postType: XM_POST_TYPE_DEFAULT 
-								msgId: nil 	//可不设						
-								sender: nil	//可不设						
-								body: textMessageBody];
-	
-	
-	
-	
-	语音转文本消息：
-		//构建语音转文本消息体
-		XMTextMessageBody *textMessageBody = [[XMTextMessageBody alloc]init];
-		textMessageBody.text = @"......";
-		
-		//构建语音转文本消息
-		XMMessage *textMessage = [[XMMessage alloc] initWithConversation: self.conversation 
-								msgType: XM_MSG_TYPE_Text 	
-								postType: XM_POST_TYPE_DEFAULT 
-								msgId: nil 	//可不设						
-								sender: nil	//可不设						
-								body: textMessageBody];
-	
-	
-	-(instancetype)initWithConversation:(XMConversation*)conversation
-	msgType:(XMMessageType)msgType
-	postType:(XM_POST_TYPE)postType
-	msgId:(NSString*)msgId
-	sender:(NSString*)sender
-	    body:(XMMessageBody*)body
-	    
-	功能：		构建消息
-	参数：		conversation	会话对象
-	msgType	消息类型，支持文本，图片，定位，声音，表情，视频等。
- 	postType	消息后处理类型，可实现文字，语音转换，以及翻译等。
-			msgId	消息id
-	sender	发送者
-	body	消息体
-	结果返回：消息对象
+		XMMessage *soundMessageBody = [[XMMessage alloc] initWithConversation: self.conversation 
+									 msgType: XM_MSG_TYPE_Sound 	
+									postType: XM_POST_TYPE_DEFAULT	//语音消息：XM_POST_TYPE_DEFAULT，语音转文本消息：XM_POST_TYPE_IAT 
+									   msgId: nil 	//可不设
+									  sender: nil	//可不设
+									    body: soundMessageBody];
+
 
 
 >发送消息
