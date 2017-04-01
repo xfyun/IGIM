@@ -109,7 +109,7 @@
 	}];
 	
 	/*
-	loginParam： 登陆参数，包含用户ID，token，appid
+		loginParam： 登陆参数，包含用户ID，token，appid
 	*/
 
 >用户退出游戏	
@@ -168,9 +168,9 @@
 	self.conversation ＝ [[XMManager sharedInstance] getConversation: conversationType receiver: chatID];
 	
 	/*
-	conversationType: 会话类型
-			XM_C2C		单聊
-			XM_GROUP	群聊
+		conversationType: 会话类型
+				XM_C2C		单聊
+				XM_GROUP	群聊
 	*/
 
 >构建消息（此处展示的是构建文本，语音和语音转文本消息，其他消息构建请参照接口文件说明）
@@ -248,9 +248,9 @@
 	}];
 
 	/*
-	groupOptions: 群组属性配置
-		groupOptions.style = 	XMGroupStyleJoinOpen		// 讨论组		
-					XMGroupStyleJoinNeedApproval	// 群组	
+		groupOptions: 群组属性配置
+			groupOptions.style = 	XMGroupStyleJoinOpen		// 讨论组		
+						XMGroupStyleJoinNeedApproval	// 群组	
 	*/
 
 >至此，游戏的聊天功能已经完全实现，能够发送与接收语音或者文本消息。
