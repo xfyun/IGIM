@@ -158,7 +158,7 @@
 	// 恢复播放	
 	[self.audioPlayer resumePlayer];
 	
-	//XMAudioPlayerDelegate 播放器回调方法
+	// XMAudioPlayerDelegate 播放器回调方法
 	-(void) onXMAudioPlayerDidComplete: (NSString *)audioFile;
 	-(void) onXMAudioPlayerDidFail: (NSError *)error;
 	- (void) onXMAudioPlayerSoundPower: (float)power;
