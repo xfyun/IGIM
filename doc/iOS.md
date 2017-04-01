@@ -78,10 +78,10 @@
 
 *application didFinishLaunchingWithOptions方法中，调用初始化接口*
 
-	//初始化，X符号在下载Demo时会被替换成开发者的专属字符串，请谨慎管理。
+	// 初始化，X符号在下载Demo时会被替换成开发者的专属字符串，请谨慎管理。
 	[[XMManager sharedInstance] initSdk:@”XXXXXX” withToken:@”XXXXXXXX-XXXX-XXXX_XXXX_XXXXXXXXXXXX”];
 	
-	//设置调试环境，0：正式，1：调试
+	// 设置调试环境，0：正式，1：调试
 	[[XMManager sharedInstance] setEnv:0];
 
 >推送绑定DeviceToken
@@ -103,9 +103,9 @@
 >用户登录游戏
 
 	[[XMManager sharedInstance] login: loginParam succ:^{
-		//登陆成功		
+		// 登陆成功		
 	}fail:^(NSInteger code, NSString *msg){
-		//登陆失败		
+		// 登陆失败		
 	}];
 	
 	/*
@@ -115,29 +115,29 @@
 >用户退出游戏	
 
 	[[XMManager sharedInstance] logout:^{
-		//成功退出	
+		// 成功退出	
 	} fail:^(NSInteger code, NSString *msg) {
-		//退出失败	
+		// 退出失败	
 	}];
 
 >语音录制接口，开发者也可自己开发录音控件，建议使用SDK内部的录音器
 
-	//创建录音器实例,并初始化	
-	self.audioRecord = [[XMAudioRecorder alloc]init];
+	// 创建录音器实例,并初始化	
+	self.audioRecord = [[XMAudioRecorder alloc] init];
 	self.audioRecord.delegate = self;
 	self.audioRecord.maxRecordDuration = 60.0f;
 	
-	//设置录音文件存储路径和文件名
-	[self.audioRecord setSaveAudioPath:savePath withSaveName:saveName];
+	// 设置录音文件存储路径和文件名
+	[self.audioRecord setSaveAudioPath: savePath withSaveName: saveName];
 	
-	//启动录音器，若启动成功，返回YES	
+	// 启动录音器，若启动成功，返回YES	
 	BOOL ret = [self.audioRecord startRecord]；
-	//停止录音
+	// 停止录音
 	[self.audioRecord stopRecord];
-	//取消录音
+	// 取消录音
 	[self.audioRecord cancelRecord];
 	
-	//XMAudioRecorderDelegate 录音器回调方法
+	// XMAudioRecorderDelegate 录音器回调方法
 	-(void) onXMAudioRecorderDidComplete: (NSString *)saveAudioFile;
 	-(void) onXMAudioRecorderDidFail: (NSError *)error;
 	-(void) onXMAudioRecorderSoundPower: (float)power;
@@ -145,17 +145,17 @@
 	
 >语音播放接口，开发者也可自己开发播音控件，建议使用SDK内部的播放器
 
-	//创建录音器实例，并初始化
-	self.audioPlayer = [[XMAudioPlayer alloc]init];
+	// 创建录音器实例，并初始化
+	self.audioPlayer = [[XMAudioPlayer alloc] init];
 	self.audioPlayer.delegate = self;
 	
-	//启动播放器，若启动成功，返回YES	
-	BOOL ret = [self.audioPlayer playAudioFile:audioFile];
-	//停止播放	
+	// 启动播放器，若启动成功，返回YES	
+	BOOL ret = [self.audioPlayer playAudioFile: audioFile];
+	// 停止播放	
 	[self.audioPlayer stopPlayer];
-	//暂停播放	
+	// 暂停播放	
 	[self.audioPlayer pausePlayer;
-	//恢复播放	
+	// 恢复播放	
 	[self.audioPlayer resumePlayer];
 	
 	//XMAudioPlayerDelegate 播放器回调方法
@@ -177,39 +177,39 @@
 
 	文本消息：
 	
-		//构建文本消息体
+		// 构建文本消息体
 		XMTextMessageBody *textMessageBody = [[XMTextMessageBody alloc]init];
 		textMessageBody.text = @"......";
 		
-		//构建文本消息
+		// 构建文本消息
 		XMMessage *textMessage = [[XMMessage alloc] initWithConversation: self.conversation 
 									 msgType: XM_MSG_TYPE_Text 	
 									postType: XM_POST_TYPE_DEFAULT 
-									   msgId: nil 	//可不设
-									  sender: nil	//可不设
+									   msgId: nil 	// 可不设
+									  sender: nil	// 可不设
 									    body: textMessageBody];
 <br/>
 
 	语音消息或语音转文本消息：
 	
-		//构建语音消息体
+		// 构建语音消息体
 		XMSoundMessageBody *soundMessageBody = [[XMSoundMessageBody alloc] initWithLocalPath: audioLocalPath displayName: @"[语音]"];
-		soundMessageBody.duration = duration;	//音频时长
+		soundMessageBody.duration = duration;	// 音频时长
 		
-		//构建语音消息
-		XMMessage *soundMessageBody = [[XMMessage alloc] initWithConversation: self.conversation 
-									      msgType: XM_MSG_TYPE_Sound 	
-									     postType: XM_POST_TYPE_DEFAULT	//语音消息：XM_POST_TYPE_DEFAULT，语音转文本消息：XM_POST_TYPE_IAT 
-									        msgId: nil 	//可不设
-									       sender: nil	//可不设
-									         body: soundMessageBody];
+		// 构建语音消息
+		XMMessage *soundMessage = [[XMMessage alloc] initWithConversation: self.conversation 
+									  msgType: XM_MSG_TYPE_Sound 	
+									 postType: XM_POST_TYPE_DEFAULT	// 语音消息：XM_POST_TYPE_DEFAULT，语音转文本消息：XM_POST_TYPE_IAT 
+									    msgId: nil 	// 可不设
+									   sender: nil	// 可不设
+									     body: soundMessageBody];
 
 >发送消息
 	
-	[self.conversation sendMessage: textMessageBody succ:^{
-		//消息发送成功	
+	[self.conversation sendMessage: textMessage succ:^{
+		// 消息发送成功	
 	} fail:^(NSInteger code, NSString *msg) {
-		//消息发送失败		
+		// 消息发送失败		
 	}];
 
 >语音转文字消息效果图
@@ -218,28 +218,39 @@
 
 
 >下载语音文件
+	
+	//下载语音文件	
+	[soundMessage getFileData:^{
+		// 语音文件下载成功	
+	} fail:^(NSInteger code, NSString *msg) {
+		// 下载失败			
+	} progress:nil];
+<br/>
 
+	//播放语音文件
+	XMSoundMessageBody *voiceMessageBody = (XMSoundMessageBody *)[soundMessage getMessageBody];
+	
+	BOOL ret = [self.audioPlayer playAudioFile: voiceMessageBody.localPath];
 
 
 
 >创建群组
 
-	- (XMGroup)createGroupWithSubject:(NSString*)aSubject
-          description:(NSString*)aDescription
-          invitees:(NSArray*)aInvitees
-          message:(NSString*)aMessage
-          setting:(XMGroupOptions*)aSetting
-          error:(NSError **)pError;
-          
-	功能：		创建群组 
-	参数：		aSubject	群组名称
-				aDescription		群组描述
-				aInvitees	群组成员
-				aMessage	邀请消息
-				aSetting	群组属性
-				pError	出错信息
-	结果返回：群组对象
+	[[XMManager sharedInstance] createNewGroupWithSubject: @"群组名称" 
+						  description: @"群组描述" 
+						     invitees: invitees		// 被邀请加入群组的用户数组 
+						      message: @"邀请消息内容" 
+						      setting: groupOptions 
+						      success:^(XMGroup *aGroup) {
+		//创建成功	
+	} failure:^(NSError *aError) {
+		//创建失败			
+	}];
 
-
+	/*
+	groupOptions: 群组属性配置
+		groupOptions.style = 	XMGroupStyleJoinOpen		// 讨论组		
+					XMGroupStyleJoinNeedApproval	// 群组	
+	*/
 
 >至此，游戏的聊天功能已经完全实现，能够发送与接收语音或者文本消息。
