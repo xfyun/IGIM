@@ -78,9 +78,11 @@
 
 *application didFinishLaunchingWithOptions方法中，调用初始化接口*
 
-	[[XMManager sharedInstance] initSdk:@”XXXXXX” withToken:@”XXXXXXXX-XXXX-XXXX_XXXX_XXXXXXXXXXXX”];//初始化，X符号在下载Demo时会被替换成开发者的专属字符串，请谨慎管理。
-	[[XMManager sharedInstance] setEnv:0];//设置调试环境，0：正式，1：调试
-
+	//初始化，X符号在下载Demo时会被替换成开发者的专属字符串，请谨慎管理。
+	[[XMManager sharedInstance] initSdk:@”XXXXXX” withToken:@”XXXXXXXX-XXXX-XXXX_XXXX_XXXXXXXXXXXX”];
+	
+	//设置调试环境，0：正式，1：调试
+	[[XMManager sharedInstance] setEnv:0];
 
 >推送绑定DeviceToken
 
@@ -100,22 +102,23 @@
 
 >用户登录游戏
 
-	-(void) login:(XMLoginParam *)param succ:(XMSucc)succ fail:(XMFail)fail
+	[[XMManager sharedInstance] login: loginParam succ:^{
+		//登陆成功		
+	}fail:^(NSInteger code, NSString *msg){
+		//登陆失败		
+	}];
 	
-	功能：		异步方式实现用户登录。
-	参数：		parm 包含用户ID，token，appid
-			succ 成功回调
-			fail 失败回调
-	结果返回：	错误信息
+	/*
+	loginParam： 登陆参数，包含用户ID，token，appid
+	*/
 
 >用户退出游戏	
 
-	-(void) logout:(XMSucc)succ fail:(XMFail)fail
-	
-	功能：		登出
-	参数：		succ 成功回调
-			fail 失败回调
-	结果返回：	无
+	[[XMManager sharedInstance] logout:^{
+		//成功退出	
+	} fail:^(NSInteger code, NSString *msg) {
+		//退出失败	
+	}];
 
 >语音录制接口，开发者也可自己开发录音控件，建议使用SDK内部的录音器
 
@@ -159,7 +162,17 @@
 	-(void) onXMAudioPlayerDidComplete: (NSString *)audioFile;
 	-(void) onXMAudioPlayerDidFail: (NSError *)error;
 	- (void) onXMAudioPlayerSoundPower: (float)power;
+
+>获取会话
+
+	self.conversation ＝ [[XMManager sharedInstance] getConversation: conversationType receiver: chatID];
 	
+	/*
+	conversationType: 会话类型
+			XM_C2C		单聊
+			XM_GROUP	群聊
+	*/
+
 >构建消息（此处展示的是构建文本，语音和语音转文本消息，其他消息构建请参照接口文件说明）
 
 	文本消息：
@@ -175,8 +188,8 @@
 									   msgId: nil 	//可不设
 									  sender: nil	//可不设
 									    body: textMessageBody];
-	
-	
+<br/>
+
 	语音消息或语音转文本消息：
 	
 		//构建语音消息体
@@ -191,62 +204,23 @@
 									       sender: nil	//可不设
 									         body: soundMessageBody];
 
-
 >发送消息
 	
-	-(int) sendMessage(XMMessage)msg succ:(XMSucc)succ fail:(XMFail)fail
-	
-	功能：		发送消息
-	参数：		msg 	消息
-				succ   发送成功回调
-				fail	发送失败回调
-	结果返回：状态码
+	[self.conversation sendMessage: textMessageBody succ:^{
+		//消息发送成功	
+	} fail:^(NSInteger code, NSString *msg) {
+		//消息发送失败		
+	}];
 
->获取当前登录的用户
+>语音转文字消息效果图
 
-	-(NSString* ) getLoginUser
-	
-	功能： 	获取当前登录的用户
-	参数： 	无 
-	结果返回：当前登陆的用户ID
-
->获取离线消息
-
-	-（void）getLocalMessage:(int)count last:(XMMessage*)last succ:(XMGetMsgSucc)succ fail: (XMFail)fail
-	
-	功能： 	获取离线消息
-	参数：		count  获取数量
-				last	上次最后一条消息
-				succ   发送成功回调
-				fail	发送失败回调
-	结果返回：无
+![Alt 语音效果图](https://github.com/xfyun/IGIM/blob/master/image/%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97%E6%95%88%E6%9E%9C%E5%9B%BE.png?raw=true "语音效果图")
 
 
->获取所有会话
+>下载语音文件
 
-	-(NSArrary*)getAllConversation
-	
-	功能：		获取所有会话
-	参数：		无
-	结果返回：会话对象
 
->根据联系人获取对应会话
 
-	-(XMConversation*)getConversation:(XMConversationType)type receiver:(NSString*)receiver
-	
-	功能：		获取会话
-	参数：		type	会话类型
-				receiver	单聊的用户identifier，群组的id
-	结果返回：会话
-
->删除指定会话
-
-	-(BOOL)deleteConversation: (XMConversation*)conversation deleteMessage:(BOOL)enable
-	
-	功能：		删除指定会话 
-	参数：		conversation  要删除的会话 
-				Enable		是否删除会话下的所有消息
-	结果返回：是否正确删除会话
 
 >创建群组
 
