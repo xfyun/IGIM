@@ -98,17 +98,17 @@
 
 	[[XMManger sharedInstance] doForeground];
 
->用户登录接口
+>用户登录游戏
 
 	-(void) login:(XMLoginParam *)param succ:(XMSucc)succ fail:(XMFail)fail
 	
 	功能：		异步方式实现用户登录。
-	参数：		parm，包含用户名，token，appid
+	参数：		parm 包含用户ID，token，appid
 			succ 成功回调
 			fail失败回调
 	结果返回：错误信息
 
->用户下线接口
+>用户退出游戏	
 
 	-(void) logout:(XMSucc)succ fail:(XMFail)fail
 	
@@ -116,6 +116,36 @@
 	参数：		succ 成功回调
 			fail失败回调
 	结果返回：无
+
+>语音录制接口，开发者也可自己开发录音控件，建议使用SDK内部的录音器
+
+	//创建录音器实例,并初始化	
+	self.audioRecord = [[XMAudioRecorder alloc]init];
+	self.audioRecord.delegate = self;
+    	self.audioRecord.maxRecordDuration = 60.0f;
+	
+	//设置录音文件存储路径和文件名
+	[self.audioRecord setSaveAudioPath:savePath withSaveName:saveName];
+	
+	//启动录音器，若启动成功，返回YES	
+	BOOL ret = [self.audioRecord startRecord]；
+	//停止录音
+	[self.audioRecord stopRecord];
+	//取消录音
+	[self.audioRecord cancelRecord];
+	
+	//XMAudioRecorderDelegate 录音器回调方法
+	-(void) onXMAudioRecorderDidComplete: (NSString *)saveAudioFile;
+	-(void) onXMAudioRecorderDidFail: (NSError *)error;
+	-(void) onXMAudioRecorderSoundPower: (float)power;
+	
+>语音播放接口，开发者也可自己开发播音控件，建议使用SDK内部的播放器
+
+
+
+
+
+
 
 >构建消息
 
