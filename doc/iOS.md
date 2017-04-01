@@ -105,8 +105,8 @@
 	功能：		异步方式实现用户登录。
 	参数：		parm 包含用户ID，token，appid
 			succ 成功回调
-			fail失败回调
-	结果返回：错误信息
+			fail 失败回调
+	结果返回：	错误信息
 
 >用户退出游戏	
 
@@ -114,15 +114,15 @@
 	
 	功能：		登出
 	参数：		succ 成功回调
-			fail失败回调
-	结果返回：无
+			fail 失败回调
+	结果返回：	无
 
 >语音录制接口，开发者也可自己开发录音控件，建议使用SDK内部的录音器
 
 	//创建录音器实例,并初始化	
 	self.audioRecord = [[XMAudioRecorder alloc]init];
 	self.audioRecord.delegate = self;
-    	self.audioRecord.maxRecordDuration = 60.0f;
+	self.audioRecord.maxRecordDuration = 60.0f;
 	
 	//设置录音文件存储路径和文件名
 	[self.audioRecord setSaveAudioPath:savePath withSaveName:saveName];
@@ -138,17 +138,34 @@
 	-(void) onXMAudioRecorderDidComplete: (NSString *)saveAudioFile;
 	-(void) onXMAudioRecorderDidFail: (NSError *)error;
 	-(void) onXMAudioRecorderSoundPower: (float)power;
+	-(void) onXMAudioRecorderDidCancel;
 	
 >语音播放接口，开发者也可自己开发播音控件，建议使用SDK内部的播放器
 
+	//创建录音器实例，并初始化
+	self.audioPlayer = [[XMAudioPlayer alloc]init];
+	self.audioPlayer.delegate = self;
+	
+	//启动播放器，若启动成功，返回YES	
+	BOOL ret = [self.audioPlayer playAudioFile:audioFile];
+	//停止播放	
+	[self.audioPlayer stopPlayer];
+	//暂停播放	
+	[self.audioPlayer pausePlayer;
+	//恢复播放	
+	[self.audioPlayer resumePlayer];
+	
+	//XMAudioPlayerDelegate 播放器回调方法
+	-(void) onXMAudioPlayerDidComplete: (NSString *)audioFile;
+	-(void) onXMAudioPlayerDidFail: (NSError *)error;
+	- (void) onXMAudioPlayerSoundPower: (float)power;
+	
+>构建单聊消息（此处展示的是构建文本，语音及语音转文本消息，其他消息构建请参照接口文件说明）
 
-
-
-
-
-
->构建消息
-
+	//构建文本消息
+		//构建文本消息体	
+	
+	
 	-(instancetype)initWithConversation:(XMConversation*)conversation
 	msgType:(XMMessageType)msgType
 	postType:(XM_POST_TYPE)postType
