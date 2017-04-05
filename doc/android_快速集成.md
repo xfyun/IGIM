@@ -167,8 +167,9 @@
 
 	//构建文本消息
 	//var1--游戏玩家名（String）， var2--文本消息（String）， var3--是否是群消息（boolean）false，
-	//var4--后处理类型(int)，var4=0 ==> 正常文本消息， var4=1 ==> 文字转成语音消息
-	CommonMsgContent msg = IMClient.getInstance().buildTextMsg(var1, var2, var3, var4);
+	//var4--后处理类型(int)，var4=0 ==> 正常文本消息， var4=1 ==> 文字转成语音消息 
+	//var5--扩展字段（String）
+	CommonMsgContent msg = IMClient.getInstance().buildTextMsg(var1, var2, var3, var4, var5);
 <br/>
 
 	//构建语音消息及语音转文本消息
@@ -176,8 +177,9 @@
 	  否则对端无法下载该消息中的文件。修改界面的展示可根据消息的唯一性标志MsgId进行查找
 
 	//var1--消息接收者（String），var2--语音文件路径（String），var3--是否是群消息（boolean）false，
-	//var4--后处理类型（int)，var4=0 ==> 正常语音消息，var=2 ==> 语音转文字消息
-	CommonMsgContent msg = IMClient.getInstance().buildAudioMsg(var1, audioFilePath, isGroup, postType, new BuildMsgResultCallback<CommonMsgContent>() {
+	//var4--后处理类型（int)，var4=0 ==> 正常语音消息，var4=2 ==> 语音转文字消息
+	//var5--扩展字段（String）
+	CommonMsgContent msg = IMClient.getInstance().buildAudioMsg(var1, var2, var3, var4, var5, new BuildMsgResultCallback<CommonMsgContent>() {
 	 		@Override
             public void onSuccess(final CommonMsgContent msg) {
                 //构建消息成功，msg--消息。
@@ -196,14 +198,16 @@
 	//构建文本消息
 	//var1--世界、工会、组队分别不同的gid(String)， var2--文本消息（String）， var3--是否是群消息（boolean）true，
 	//var4--后处理类型(int)，var4=0 ==> 正常文本消息， var4=1 ==> 文字转成语音消息
-	CommonMsgContent msg = IMClient.getInstance().buildTextMsg(var1, var2, var3, var4);	
+	//var5--扩展字段（String）
+	CommonMsgContent msg = IMClient.getInstance().buildTextMsg(var1, var2, var3, var4， var5);	
 <br/>
 
 	//构建语音消息及语音转文本消息
 
 	//var1--世界、工会、组队分别不同的gid（String），var2--语音文件路径（String），var3--是否是群消息（boolean）true，
 	//var4--后处理类型（int)，var4=0 ==> 正常语音消息，var=2 ==> 语音转文字消息
-	CommonMsgContent msg = IMClient.getInstance().buildAudioMsg(var1, audioFilePath, isGroup, postType, new BuildMsgResultCallback<CommonMsgContent>() {
+	//var5--扩展字段（String）
+	CommonMsgContent msg = IMClient.getInstance().buildAudioMsg(var1, var2, var3, var4, var5, new BuildMsgResultCallback<CommonMsgContent>() {
 	 		@Override
             public void onSuccess(final CommonMsgContent msg) {
                 //构建消息成功，msg--消息。
