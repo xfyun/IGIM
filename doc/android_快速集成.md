@@ -84,8 +84,10 @@
 
 >登录到游戏时
 	
-	//登录接口，var1--登录的用户名（String）, var2--是否强制登录（boolean），var3--在服务端获取的用户的token（String）
-	IMClient.getInstance().login(var1, var2, var3, new ResultCallback<String>() {
+	//uid--用户的唯一ID，name--用户的昵称,props--用户自定义属性（数据格式可为JSON，也可以是其他数据格式），icon 用户头像Url
+	User user = new User(String uid, String name, String props, String icon); 
+	//登录接口，user--登录的用户实例（User）, var2--是否强制登录（boolean），var3--在服务端获取的用户的token（String）
+	IMClient.getInstance().login(user, var2, var3, new ResultCallback<String>() {
             @Override
             public void onSuccess(String data) {
                 //登录成功，data是登录用户名
