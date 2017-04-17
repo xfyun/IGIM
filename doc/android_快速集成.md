@@ -4,20 +4,20 @@
 # 四步极快速集成游戏语音
 
 ## 步骤
-1. 获取IMLib及so文件
+1. 获取IGIM及so文件
 2. 获取Appid
-3. 导入IMLib,配置AndroidManifest.xml
+3. 导入IGIM,配置AndroidManifest.xml
 4. 调用IMClient提供的接口，实现游戏内即时消息，语音识别等功能
 
 ## 具体实施
-### 获取IMLib及so文件
-登录讯飞开放平台 - 游戏解决方案（<http://game.xfyun.cn/>），进入SDK下载，下载IMLib及so文件。
+### 获取IGIM及so文件
+登录讯飞开放平台 - 游戏解决方案（<http://game.xfyun.cn/>），进入SDK下载，下载IGIM及so文件。
 
 ### 获取Appid
 登录讯飞开放平台 - 游戏解决方案（<http://game.xfyun.cn/>），选择/创建应用并且接入游戏解决方案，进入“控制台”查看对应Appid。
 
-### 导入IMLib及so文件,配置AndroidManifest.xml
-1. 导入IMLib.jar包,请自行根据IDE搜索导入jar包的方式，并添加依赖。
+### 导入IGIM及so文件,配置AndroidManifest.xml
+1. 导入IGIM.jar包,请自行根据IDE搜索导入jar包的方式，并添加依赖。
 2. 将下载的so文件统一放在libs文件夹下。效果图如下：
 
 ![Alt 导包效果图](https://github.com/xfyun/IGIM/blob/master/image/%E5%AF%BC%E5%8C%85%E5%B1%95%E7%A4%BA%E5%9B%BE.png?raw=true "导包效果图")<br/><br/>
