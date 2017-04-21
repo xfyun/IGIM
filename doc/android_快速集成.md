@@ -4,20 +4,20 @@
 # 四步极快速集成游戏语音
 
 ## 步骤
-1. 获取IGIM及so文件
+1. 获取IGIM、Sunflower及so文件
 2. 获取Appid
-3. 导入IGIM,配置AndroidManifest.xml
+3. 导入IGIM、Sunflower,配置AndroidManifest.xml
 4. 调用IMClient提供的接口，实现游戏内即时消息，语音识别等功能
 
 ## 具体实施
 ### 获取IGIM及so文件
-登录讯飞开放平台 - 游戏解决方案（<http://game.xfyun.cn/>），进入SDK下载，下载IGIM及so文件。
+登录讯飞开放平台 - 游戏解决方案（<http://game.xfyun.cn/>），进入SDK下载，下载IGIM、Sunflower及so文件。
 
 ### 获取Appid
 登录讯飞开放平台 - 游戏解决方案（<http://game.xfyun.cn/>），选择/创建应用并且接入游戏解决方案，进入“控制台”查看对应Appid。
 
 ### 导入IGIM及so文件,配置AndroidManifest.xml
-1. 导入IGIM.jar包,请自行根据IDE搜索导入jar包的方式，并添加依赖。
+1. 导入IGIM.jar和Sunflower包,请自行根据IDE搜索导入jar包的方式，并添加依赖。
 2. 将下载的so文件统一放在libs文件夹下。效果图如下：
 
 ![Alt 导包效果图](https://github.com/xfyun/IGIM/blob/master/image/%E5%AF%BC%E5%8C%85%E5%B1%95%E7%A4%BA%E5%9B%BE.png?raw=true "导包效果图")<br/><br/>
@@ -245,8 +245,24 @@
 
 >下载语音文件
 	
+	//参数传入整个参数进行下载，推荐使用。能跟数据库中的保存的文件名保持统一。
 	//当收到语音消息时，需要下载该文件，var1--语音消息(CommonMsgContent)，var2--false  var3--下载回调
     IMClient.getInstance().downloadFile( var1, var2, new ResultCallback() {
+                @Override
+                public void onError(int errorCode) {
+                    //下载失败，errorCode--错误码
+                }
+
+                @Override
+                public void onSuccess(Object obj) {
+					//下载成功，obj--下载完成后的信息类（DownloadInfo）,必须以下面的方式转型。
+                   	DownloadInfo info = new DownloadInfo(obj);
+                }
+            });
+
+	//不推荐使用，不能够实时更新数据库中保存的文件名。
+	//当收到语音消息时，需要下载该文件，var1--消息类型  语音消息-2，图片消息-1，视频消息-3，此类型只是为了区分下载的文件夹，var2--需要下载文件的唯一性标志（fid）,可在语音消息中获取  var3--下载回调
+	IMClient.getInstance().downloadFile(var1, var2, new ResultCallback() {
                 @Override
                 public void onError(int errorCode) {
                     //下载失败，errorCode--错误码
