@@ -236,12 +236,12 @@
 
 >创建群组
 
-	[[XMManager sharedInstance] createNewGroupWithSubject: @"群组名称" 
-						  description: @"群组描述" 
-						     invitees: invitees		// 被邀请加入群组的用户数组 
-						      message: @"邀请消息内容" 
-						      setting: groupOptions 
-						      success:^(XMGroup *aGroup) {
+	[[XMManager sharedInstance] createNewGroupWithName: @"群组名称" 
+					       description: @"群组描述" 
+						  invitees: invitees		// 被邀请加入群组的用户数组 
+						   message: @"邀请消息内容" 
+						   setting: groupOptions 
+						   success:^(XMGroup *aGroup) {
 		//创建成功	
 	} failure:^(NSError *aError) {
 		//创建失败			
