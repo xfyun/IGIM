@@ -18,15 +18,18 @@
 
 ### 导入XMLib至APP工程
 1. 创建一个iOS Project
-2. 将MLib.framework拷贝至该工程的文件目录libs下
+2. 将MLib.framework拷贝至该工程的文件目录lib下
 3. 将XMLib.framework(静态库)导入至工程中：  
 	Targets-->Build Phases-->Link Binary With Libraries
-4. 将工程Build Settings中的Framework Search Paths指定到刚才的libs目录
+4. 将工程Build Settings中的Framework Search Paths指定到刚才的lib目录
 5. 添加如下动态依赖库至Link Binary With Libraries：   
 	libz.tbd    
 	libsqlite3.tbd
 6. 将Enable Bitcode设置为NO
-7. 配置sdk运行所需权限
+7. 如下设置Targets-->Build Settings-->Linking-->Other Linker Flags:  
+	-ObjC  
+	或者 -force_load $(PROJECT_DIR)/lib/XMLib.framework/XMLib
+8. 配置sdk运行所需权限
 
 	```
 	<!—IGIM_SDK  运行需要的权限  --/>
