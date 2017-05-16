@@ -99,7 +99,7 @@
 
 *applicationDidEnterBackground方法*
 	
-	[[XMManger sharedInstance] doBackground:nil succ:nil faild:nil];
+	[[XMManger sharedInstance] doBackground:nil succ:nil fail:nil];
 
 *applicationDidEnterForeground方法*
 
