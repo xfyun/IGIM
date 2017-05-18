@@ -29,6 +29,7 @@
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<uses-permission android:name="android.permission.GET_TASKS" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
 	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
 	<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
@@ -51,16 +52,6 @@
         android:name="IFLYTEK_APPKEY"
         android:value="" />  //步骤1中获取的AppId
 
->在<application\>标签中配置service
-
-		<service
-            android:name=".core.service.NetWorkStateMonitor"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="NetworkStateChangeService" />
-            </intent-filter>
-        </service>
 
 
 
@@ -84,13 +75,13 @@
 
 >登录到游戏时
 	
-	//uid--用户的唯一ID，name--用户的昵称,props--用户自定义属性（数据格式可为JSON，也可以是其他数据格式），icon 用户头像Url
+	//uid--玩家的唯一ID，name--玩家的昵称,props--玩家自定义属性（数据格式可为JSON，也可以是其他数据格式），icon 玩家头像Url
 	User user = new User(String uid, String name, String props, String icon); 
-	//登录接口，user--登录的用户实例（User）, var2--是否强制登录（boolean），var3--在服务端获取的用户的token（String）
+	//登录接口，user--登录的玩家实例（User）, var2--是否强制登录（boolean），var3--在服务端获取的玩家的token（String）
 	IMClient.getInstance().login(user, var2, var3, new ResultCallback<String>() {
             @Override
             public void onSuccess(String data) {
-                //登录成功，data是登录用户名
+                //登录成功，data是登录玩家名
             }
 
             @Override
@@ -99,6 +90,80 @@
             }
 
         });
+>创建群或讨论组
+
+	//创建群或者讨论组，必须在登录之后调用此接口
+	//群和讨论组的区别，讨论组和群都可以主动加入，或者被别人拉入，区别在于讨论组不需要确认。
+	//讨论组里面的任何一个成员都可以退出，当讨论组里面的人数为0时，讨论组自动销毁。
+	//讨论组也有创建者，创建者能够踢人。其他区别请参照QQ讨论组和群组的用法。
+	//creGroupParams--创建群的具体参数（如下：gname--群或者讨论组名称, type---0,代表创建讨论组,type---1代表群组),listener--创建群的回调
+    IMClient.getInstance().createGroup(creGroupParams,	new ResultCallback<String>(){
+			@Override
+            public void onSuccess(String data) {
+                //创建群组成功，data是创建的群组生成的唯一标识gid。
+            }
+
+            @Override
+            public void onError(int errorCode) {
+                //创建群组成功，errorcode为失败码
+            }
+
+	});
+
+>加入群组或者讨论组
+
+	//加入群组或者讨论组，必须在登录之后调用此接口
+	//joinToGroupParams--加入的群组或者讨论组的具体参数（如下：gid--需要加入的群组或者讨论组的唯一标识）
+	IMClient.getInstance().joinToGroup(joinToGroupParams, new ResultCallback<String>(){
+			@Override
+            public void onSuccess(String data) {
+                //加入群组成功，data是加入到群组的uid
+            }
+
+            @Override
+            public void onError(int errorCode) {
+                //创建群组成功，errorcode为失败码
+            }
+	});
+
+>拉人进入群组或者讨论组
+	
+	//拉人加入群组或者讨论组，必须在登录之后调用此接口，群组需要对方同意，讨论组不需要
+	//addMemberToGroupParams--拉人加入的群组或者讨论组的具体参数。如下：gid--群组或者讨论组的唯一标识,members（JsonArray格式的）--需要拉入的玩家,type（0是讨论组，1是群组）,msg（添加群成员的说明）
+	IMClient.getInstance().addMemToGroup(addMemberToGroupParams, new ResultCallback<String>(){
+			@Override
+            public void onSuccess(String data) {
+                //请求成功，data是加入到群组的uid
+            }
+
+            @Override
+            public void onError(int errorCode) {
+                //创建群组成功，errorcode为失败码
+            }
+	});
+
+>退出讨论组或者群组
+
+
+	//退出讨论组或者群组，必须在登录之后调用此接口
+	// exitFromGroupParams--退出群组或者讨论组的具体参数。如下：gid--群组或者讨论组的唯一标识
+	IMClient.getInstance().exitFromGroup(exitFromGroupParams,new ResultCallback<String>(){
+	
+			@Override
+            public void onSuccess(String data) {
+                //请求成功，data是加入到群组的uid
+            }
+
+            @Override
+            public void onError(int errorCode) {
+                //创建群组成功，errorcode为失败码
+            }
+
+	});
+
+>其他关于群组和讨论组的接口调用请参照文档"IM_Android客户端用户手册"，此文档有对所有接口的详细说明。
+
+<hr>
 
 >调用语音录制接口，若游戏商家想要自己开发录音，可跳过此步骤。但录音接口中录制的是本公司特定的格式，转写结果更为精确
 	
