@@ -101,7 +101,7 @@
 	
 	[[XMManger sharedInstance] doBackground:nil succ:nil fail:nil];
 
-*applicationDidEnterForeground方法*
+*applicationWillEnterForeground方法*
 
 	[[XMManger sharedInstance] doForeground];
 
