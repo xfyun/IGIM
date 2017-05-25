@@ -33,12 +33,6 @@
 
 	```
 	<!—IGIM_SDK  运行需要的权限  --/>
-	<key>NSCameraUsageDescription</key>
-	<string>是否允许此App使用您的相机？</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>是否允许此App后台获取地理位置信息？</string>
-	<key>NSLocationUsageDescription</key>
-	<string>是否允许此App获取地理位置信息？</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>是否允许此App根据地理位置获取周边信息？</string>
 	<key>NSMicrophoneUsageDescription</key>
@@ -53,11 +47,6 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
-		<key>UIBackgroundModes</key>
-		<array>
-			<string>voip</string>
-			<string>remote-notification</string>
-		</array>
 	</dict>
     
     
@@ -65,7 +54,6 @@
 
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>location</string>
 		<string>remote-notification</string>
 	</array>
 
