@@ -69,12 +69,6 @@
 		<string>remote-notification</string>
 	</array>
 
->存储设置
-
-		<key>UIFileSharingEnabled</key>
-	<true/>
-
-
 
 ### 调用IMClient接口，实现消息传递功能
 
