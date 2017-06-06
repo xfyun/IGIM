@@ -34,7 +34,7 @@
 	```
 	<!—IGIM_SDK  运行需要的权限  --/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>是否允许此App根据地理位置获取周边信息？</string>
+	<string>App需要您的同意,才能在使用期间访问位置</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>是否允许此App使用您的麦克风？</string>
 	```
@@ -236,8 +236,32 @@
 
 	/*
 		groupOptions: 群组属性配置
-			groupOptions.style = 	XMGroupStyleJoinOpen		// 讨论组		
-						XMGroupStyleJoinNeedApproval	// 群组	
+			groupOptions.style = XMGroupStyleJoinOpen			// 讨论组		
+								 XMGroupStyleJoinNeedApproval	// 群组	
 	*/
+
+>消息接收回调 \<XMMessageListener\>
+
+	[[XMManager sharedInstance] addMessageDelegate:self];
+	
+	//新消息回调
+	- (void) onNewMessage: (NSArray *) msgs;
+
+>状态变化回调 \<XMClientDelegate\>
+
+	[[XMManager sharedInstance] addClientDelegate:self];
+
+	//网络状态变化回调（与IM Server）
+	- (void) didConnectionStateChanged: (XMNetworkStatus)aConnectionState;
+	
+	//消息接收者已读回执
+	-(void) didReadNotifyChanged: (NSNumber *)seqId;
+	
+	//消息在其他设备已读通知
+	-(void) didUnreadMessagesCountChanged;
+	
+	//强制下线通知
+	- (void) onForceOffline;
+
 
 >至此，游戏的聊天功能已经完全实现，能够发送与接收语音或者文本消息。
