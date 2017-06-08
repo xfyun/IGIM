@@ -169,7 +169,7 @@
 	
 	//设置文件保存路径   dir--string类型，到达需要存储的文件夹的名称。
 	IMClient.getInstance().setAudioPath(dir);
-	//开始录音,mCurrentFileName,必须传入带有后缀名的文件名。此处生成的文件格式为pcm,所以文件名应为xxx.pcm
+	//开始录音,mCurrentFileName, 文件名。构建语音消息一定要使用录音结束后的回调的文件路径。因为，在该方法内会改变传入文件的后缀，如果使用的就是pcm后缀，则无影响。
 	IMClient.getInstance().startRecording(mCurrentFileName, new PcmRecordListener() {
 			@Override
 			public void onRecordBuffer(int length, double volume) {
@@ -190,6 +190,7 @@
 			@Override
 			public void onRecordFinished(String filePath) {
 				//录制结束，返回文件路径
+				//使用该路径，构建消息。
 
 			}
 	});
