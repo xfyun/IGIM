@@ -263,5 +263,9 @@
 	//强制下线通知
 	- (void) onForceOffline;
 
+>会话消息已读回执
+
+	//设置会话内消息全部已读，并向会话对方发送消息已读回执
+	[self.conversation setReadMessage];
 
 >至此，游戏的聊天功能已经完全实现，能够发送与接收语音或者文本消息。
