@@ -47,6 +47,8 @@
     
     
 >在<application\>标签中配置AppId
+	
+*注意  如果这里的appid是形似于597e9093的，就是e的两端都是数字的形式，必须在appid的两端加'，即value="'597e9093'"*
 
 	<meta-data
         android:name="IFLYTEK_APPKEY"
@@ -167,9 +169,9 @@
 
 >调用语音录制接口，若游戏商家想要自己开发录音，可跳过此步骤。但录音接口中录制的是本公司特定的格式，转写结果更为精确
 	
-	//设置文件保存路径   dir--string类型，到达需要存储的文件夹的名称。
+	//设置文件保存路径   dir--string类型，到达需要存储的文件夹的名称。不调用，则使用默认路径
 	IMClient.getInstance().setAudioPath(dir);
-	//开始录音
+	//开始录音，该接口所有回调不在主线程，不要在回调中做主线程操作。
 	IMClient.getInstance().startRecording(mCurrentFileName, new PcmRecordListener() {
 			@Override
 			public void onRecordBuffer(int length, double volume) {
@@ -196,7 +198,7 @@
 
 >播放语音接口，若使用的是我们提供的语音录制接口，请使用我们的播放接口播放。
 	
-	//初始化播放接口，filePath--播放文件接口，
+	//初始化播放接口，filePath--播放文件路径
 	IMClient.getInstance().initPlayer(filePath, new AudioPlayer.PlayerListener() {
             @Override
             public void onPause() {
@@ -230,16 +232,20 @@
 	//暂停播放
 	IMClient.getInstance().pausePlay();	
 
+><font color="#FF0000">特殊消息（语音转文字、文字转语音），在发出消息后，会接收到带有相同msgID的消息（在上面注册消息接收的广播处），此时再将消息转化为PostTextRlt，或者PostVoiceRlt，就可获得转化后的内容。具体操作请参考Demo。</font>
+>
 >构建单聊消息（此处展示的是构建文本，语音及语音转文本消息，其他消息构建请参照接口文件说明）
 
-	//构建文本消息
+*构建文本消息*
+
 	//var1--游戏玩家名（String）， var2--文本消息（String）， var3--是否是群消息（boolean）false，
 	//var4--后处理类型(int)，var4=0 ==> 正常文本消息， var4=1 ==> 文字转成语音消息 
 	//var5--扩展字段（String）
 	CommonMsgContent msg = IMClient.getInstance().buildTextMsg(var1, var2, var3, var4, var5);
 <br/>
 
-	//构建语音消息及语音转文本消息
+*构建语音消息及语音转文本消息*
+
 	//此接口既有返回值，又有回调。返回值是为了给你快速的做页面展示，而回调则是真正构建成功，在构建成功回调中发送消息。
 	  否则对端无法下载该消息中的文件。修改界面的展示可根据消息的唯一性标志MsgId进行查找
 
@@ -262,14 +268,15 @@
 
 >构建群发消息（此处展示的是构建文本，语音及语音转文本消息，其他消息构建请参照接口文件说明）
 
-	//构建文本消息
+*构建文本消息*
+
 	//var1--世界、工会、组队分别不同的gid(String)， var2--文本消息（String）， var3--是否是群消息（boolean）true，
 	//var4--后处理类型(int)，var4=0 ==> 正常文本消息， var4=1 ==> 文字转成语音消息
 	//var5--扩展字段（String）
 	CommonMsgContent msg = IMClient.getInstance().buildTextMsg(var1, var2, var3, var4， var5);	
 <br/>
 
-	//构建语音消息及语音转文本消息
+*构建语音消息及语音转文本消息*
 
 	//var1--世界、工会、组队分别不同的gid（String），var2--语音文件路径（String），var3--是否是群消息（boolean）true，
 	//var4--后处理类型（int)，var4=0 ==> 正常语音消息，var4=2 ==> 语音转文字消息
@@ -347,21 +354,6 @@
 <hr>
 
 >附错误码：
->    //JsonException 21000
-    public static int ERROR_JSON_SERVER = 21001;
-    public static int ERROR_JSON_SDK = 21002;
-    public static int ERROR_JSON_DEMO = 21003;
-
-
-    //	I/O异常
-    public static int ERROR_FILE_IO_EXCEPTION = 22001;
-    public static int ERROR_FILE_NO_PERMISSION = 22002;
-    public static int ERROR_NO_FILE_OR_DATA = 22003;
-
-  
-   
-
-
 
 |错误码| 说明|
 | :--:| --|
