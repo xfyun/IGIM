@@ -39,7 +39,7 @@
     <uses-permission android:name="andorid.permission.CHANGE_CONFIGURATION" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />	
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> 
     <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
 	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -167,11 +167,14 @@
 
 <hr>
 
->调用语音录制接口，若游戏商家想要自己开发录音，可跳过此步骤。但录音接口中录制的是本公司特定的格式，转写结果更为精确
+>调用语音录制接口，若游戏商家想要自己开发录音，可跳过此步骤。但录音接口中录制的是本公司特定的格式，转写结果更为精确.
 	
 	//设置文件保存路径   dir--string类型，到达需要存储的文件夹的名称。不调用，则使用默认路径
 	IMClient.getInstance().setAudioPath(dir);
+
 	//开始录音，该接口所有回调不在主线程，不要在回调中做主线程操作。
+	//mCurrentFileName, 文件名。构建语音消息一定要使用录音结束后的回调的文件路径。因为，在该方法内会改变传入文件的后缀，如果使用的就是pcm后缀，则无影响。
+
 	IMClient.getInstance().startRecording(mCurrentFileName, new PcmRecordListener() {
 			@Override
 			public void onRecordBuffer(int length, double volume) {
@@ -192,6 +195,7 @@
 			@Override
 			public void onRecordFinished(String filePath) {
 				//录制结束，返回文件路径
+				//使用该路径，构建消息。
 
 			}
 	});
@@ -249,7 +253,7 @@
 	//此接口既有返回值，又有回调。返回值是为了给你快速的做页面展示，而回调则是真正构建成功，在构建成功回调中发送消息。
 	  否则对端无法下载该消息中的文件。修改界面的展示可根据消息的唯一性标志MsgId进行查找
 
-	//var1--消息接收者（String），var2--语音文件路径（String），var3--是否是群消息（boolean）false，
+	//var1--消息接收者（String），var2--语音文件路径（String）（必须带有后缀名），var3--是否是群消息（boolean）false，
 	//var4--后处理类型（int)，var4=0 ==> 正常语音消息，var4=2 ==> 语音转文字消息
 	//var5--扩展字段（String）
 	CommonMsgContent msg = IMClient.getInstance().buildAudioMsg(var1, var2, var3, var4, var5, new BuildMsgResultCallback<CommonMsgContent>() {
@@ -278,7 +282,7 @@
 
 *构建语音消息及语音转文本消息*
 
-	//var1--世界、工会、组队分别不同的gid（String），var2--语音文件路径（String），var3--是否是群消息（boolean）true，
+	//var1--世界、工会、组队分别不同的gid（String），var2--语音文件路径（String）（必须带有后缀名），var3--是否是群消息（boolean）true，
 	//var4--后处理类型（int)，var4=0 ==> 正常语音消息，var4=2 ==> 语音转文字消息
 	//var5--扩展字段（String）
 	CommonMsgContent msg = IMClient.getInstance().buildAudioMsg(var1, var2, var3, var4, var5, new BuildMsgResultCallback<CommonMsgContent>() {
@@ -419,3 +423,4 @@
 |35005|字段非数组类型|
 |36001|该用户已在线|
 
+>常见问题讨论：

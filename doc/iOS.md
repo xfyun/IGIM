@@ -33,14 +33,8 @@
 
 	```
 	<!—IGIM_SDK  运行需要的权限  --/>
-	<key>NSCameraUsageDescription</key>
-	<string>是否允许此App使用您的相机？</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>是否允许此App后台获取地理位置信息？</string>
-	<key>NSLocationUsageDescription</key>
-	<string>是否允许此App获取地理位置信息？</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>是否允许此App根据地理位置获取周边信息？</string>
+	<string>App需要您的同意,才能在使用期间访问位置</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>是否允许此App使用您的麦克风？</string>
 	```
@@ -53,11 +47,6 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
-		<key>UIBackgroundModes</key>
-		<array>
-			<string>voip</string>
-			<string>remote-notification</string>
-		</array>
 	</dict>
     
     
@@ -65,15 +54,8 @@
 
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>location</string>
 		<string>remote-notification</string>
 	</array>
-
->存储设置
-
-		<key>UIFileSharingEnabled</key>
-	<true/>
-
 
 
 ### 调用IMClient接口，实现消息传递功能
@@ -101,7 +83,7 @@
 	
 	[[XMManger sharedInstance] doBackground:nil succ:nil fail:nil];
 
-*applicationDidEnterForeground方法*
+*applicationWillEnterForeground方法*
 
 	[[XMManger sharedInstance] doForeground];
 
@@ -216,6 +198,11 @@
 	} fail:^(NSInteger code, NSString *msg) {
 		// 消息发送失败		
 	}];
+	
+	/*
+	特别说明：
+		1.由于SDK在发送消息时，对消息对象的操作都是弱引用，所以应用层需要保证消息对象已经被强引用，否则会被系统ARC自动释放内存。
+	*/
 
 >语音转文字消息效果图
 
@@ -254,8 +241,51 @@
 
 	/*
 		groupOptions: 群组属性配置
-			groupOptions.style = 	XMGroupStyleJoinOpen		// 讨论组		
-						XMGroupStyleJoinNeedApproval	// 群组	
+			groupOptions.style = XMGroupStyleJoinOpen			// 讨论组		
+								 XMGroupStyleJoinNeedApproval	// 群组	
+	*/
+
+>消息接收回调 \<XMMessageListener\>
+
+	[[XMManager sharedInstance] addMessageDelegate:self];
+	
+	//新消息回调
+	- (void) onNewMessage: (NSArray *) msgs;
+
+>状态变化回调 \<XMClientDelegate\>
+
+	[[XMManager sharedInstance] addClientDelegate:self];
+
+	//网络状态变化回调（与IM Server）
+	- (void) didConnectionStateChanged: (XMNetworkStatus)aConnectionState;
+	
+	//消息接收者已读回执
+	-(void) didReadNotifyChanged: (NSNumber *)seqId;
+	
+	//消息在其他设备已读通知
+	-(void) didUnreadMessagesCountChanged;
+	
+	//强制下线通知
+	- (void) onForceOffline;
+
+>会话消息已读回执
+
+	//设置会话内消息全部已读，并向会话对方发送消息已读回执
+	[self.conversation setReadMessage];
+
+>拉取离线消息
+
+	-(void) pullOfflineMessage;
+	
+	/*
+	特别说明：
+		1.对于IGIM iOS SDK，在1.0.1013版本之前（包含1013版本）拉取离线消息接口由SDK内部自行调用。但从1.0.1014版本开始，此接口必须由开发者自己调用，SDK内部不再调用。
+		2.对于未发送已读回执（[self.conversation setReadMessage];）的消息将会在下次拉取离线时再次被拉取。
+		3.建议以下三种情况需要拉取离线消息(参照demo)：
+			a.用户登录成功后；
+			b.应用从后台进入前台时；
+			c.与IM Server网络断开后重新连接成功时；
+		4.若只需要接收即时消息，不调用该接口即可。
 	*/
 
 >至此，游戏的聊天功能已经完全实现，能够发送与接收语音或者文本消息。
