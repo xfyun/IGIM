@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.iflytek.im.demo.ui.activity.ChatActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/chat_list"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/chat_voice"
+            android:onClick="onVoiceClick"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="4dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/ic_keyboard_voice_grey_600_36dp"
+            android:padding="2dp"
+            android:visibility="visible" />
+        <EditText
+            android:id="@+id/chat_text"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_weight="1"
+            android:hint="@string/chat_text_hint"
+            android:gravity="bottom"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:maxHeight="160dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/chat_emoji"
+            android:onClick="onEmojiClick"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="4dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/chat_emoji_selector"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/chat_attachment"
+            android:onClick="onAttachmentClick"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="4dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/chat_attachment_selector"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/chat_send"
+            android:visibility="gone"
+            android:src="@drawable/chat_send_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="2dp"
+            android:layout_margin="4dp"
+            android:layout_gravity="bottom" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/black_26p"
+        android:layout_height="1px" />
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/attachment_container"
+        android:layout_width="match_parent"
+        android:layout_height="220dp" />
+</LinearLayout>

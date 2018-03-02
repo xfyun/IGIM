@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical"
+    android:padding="10dip" >
+    
+
+    <TextView
+        android:id="@+id/chat_imgTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="09-25 12:00"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chat_imgTime" >
+
+        <LinearLayout
+            android:id="@+id/chart_from_imgContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@color/transparent"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/iamg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/name_imgFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/chatfrom_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/iv_chat_from" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/chatfrom_imgContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                />
+            
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/chart_to_imgContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent" >
+
+            <ImageView
+                android:id="@+id/chatto_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/iv_head_to" />
+
+            <ImageView
+                android:id="@+id/chatto_imgContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/chatto_icon"
+                android:gravity="center_vertical"
+                
+                />
+            <ImageView
+                android:id="@+id/send_img_msg_hint"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_toLeftOf="@id/chatto_imgContent"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

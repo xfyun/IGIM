@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/applicant_icon"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:src="@drawable/iv_chat_from"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            />
+        <LinearLayout
+            android:id="@+id/applicant_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="8dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/applicant_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:maxWidth="160dp"
+                android:minWidth="160dp"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/applicant_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="160dp"
+                android:minWidth="160dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="1"
+                android:textSize="16sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right">
+            <Button
+                android:id="@+id/agree_applicant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="同意"
+                android:background="@drawable/btn_recorder_normal"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                />
+            <TextView
+                android:id="@+id/agreed_join"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已同意"
+                android:textColor="@color/gray_font"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_font"
+        />
+</LinearLayout>

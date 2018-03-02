@@ -1,0 +1,55 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.iflytek.im.demo.ui.fragment.ConversationFragment">
+    <!--上面两句是为了防止ConversationFragment里的RecyclerView自动滑动-->
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/ll_empty_state_chat_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_error_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="20sp"
+                android:textColor="@color/black_26p"
+                android:text="@string/empty_state_chat_list_1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/black_16p"
+                android:text="@string/empty_state_chat_list_2"/>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="8dp"
+        android:id="@+id/rv_chats_normal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>

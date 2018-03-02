@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+     <RelativeLayout
+        android:id="@+id/groupTitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/chat_bottom_send_pressed" >
+        
+         <TextView
+            android:id="@+id/createGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignBaseline="@+id/groupTitle"
+            android:text="创建群"
+            android:textColor="@color/color_bai"
+            android:textSize="18dp" />
+        
+
+        <TextView
+            android:id="@+id/groupTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="群组"
+            android:textColor="@color/color_bai"
+            android:textSize="25dp" />
+        
+         <TextView
+            android:id="@+id/joinGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBaseline="@+id/groupTitle"
+            android:text="加群"
+            android:textColor="@color/color_bai"
+            android:textSize="18dp" />
+          
+    </RelativeLayout>
+    
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="header_hight">44.0dip</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">0dp</dimen>
+
+    <dimen name="full_cardview_margin_side">-2dp</dimen>
+
+
+    <dimen name="user_introduction_margin">80dp</dimen>
+    <dimen name="image_pager_indicator_margin">16dp</dimen>
+    <dimen name="indicator_padding_start_end">8dp</dimen>
+    <dimen name="indicator_padding_top_bottom">4dp</dimen>
+    <dimen name="fast_scroll_overlay_text_size">100dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">10dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+
+    <dimen name="textSize_quicksidebar">10sp</dimen>
+    <dimen name="textSize_quicksidebar_choose">15sp</dimen>
+    <dimen name="textSize_quicksidebartips">20sp</dimen>
+    <dimen name="height_quicksidebartips">45dp</dimen>
+    <dimen name="height_quicksidebaritem">16dp</dimen>
+
+    <dimen name="imcall_activity_horizontal_margin">16dp</dimen>
+    <dimen name="imcall_activity_vertical_margin">16dp</dimen>
+
+    <dimen name="imcall_video_indicator_bottom_margin">20dp</dimen>
+
+    <dimen name="min_panel_height">220dp</dimen>
+    <dimen name="max_panel_height">380dp</dimen>
+
+    <dimen name="min_keyboard_height">80dp</dimen>
+
+</resources>

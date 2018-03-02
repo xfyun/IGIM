@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.iflytek.im.demo"
+        minSdkVersion 16
+        targetSdkVersion 22
+        multiDexEnabled false
+    }
+
+    aaptOptions {
+        cruncherEnabled false
+        useNewCruncher false
+    }
+
+    useLibrary("org.apache.http.legacy")
+
+    compileOptions {
+        sourceCompatibility 1.7
+        targetCompatibility 1.7
+    }
+
+    signingConfigs {
+        myConfig {
+            storeFile file("IMDemokeystore")
+            storePassword "xylx1.t!@#"
+            keyAlias "myalias"
+            keyPassword "xylx1.t!@#"
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            signingConfig signingConfigs.myConfig
+            jniDebuggable true
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            debuggable true
+            signingConfig signingConfigs.myConfig
+            jniDebuggable true
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+}
+
+repositories { flatDir { dirs 'libs' } }
+
+dependencies {
+    compile project(':iMLib')
+    compile files('libs/AutoUpdate_SDK.jar')
+    compile files('libs/joda-time-2.9.4.jar')
+    compile files('libs/glide-3.7.0.jar')
+    compile files('libs/nineoldandroids-2.4.0.jar')
+    compile files('libs/pinyin4j-2.5.0.jar')
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support:cardview-v7:25.1.0'
+    compile 'com.android.support:recyclerview-v7:25.1.0'
+    compile 'com.hwangjr.rxbus:rxbus:1.0.4'
+    compile 'me.relex:circleindicator:1.2.1@aar'
+    compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
+    compile 'io.github.rockerhieu:emojicon:1.4.2'
+    compile files('libs/Sunflower.jar')
+    //    compile files('libs/IGIM_Android_1.0_1018.jar')
+}

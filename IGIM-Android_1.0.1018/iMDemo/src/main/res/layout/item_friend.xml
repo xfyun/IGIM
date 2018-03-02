@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="?attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingStart="16dp"
+    android:paddingRight="16dp"
+    android:paddingEnd="16dp" >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp" >
+        <ImageView
+            android:id="@+id/del_icon"
+            android:layout_gravity="center"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:paddingRight="8dp"
+            android:src="@drawable/del_group_manager"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/friend_item_icon"
+            android:src="@drawable/iv_chat_from"
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+        <TextView
+            android:id="@+id/friend_item_text"
+            android:textSize="16sp"
+            android:padding="4dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|start"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:background="@color/black_26p"
+        android:layout_width="match_parent"
+        android:layout_height="1px" />
+</LinearLayout>

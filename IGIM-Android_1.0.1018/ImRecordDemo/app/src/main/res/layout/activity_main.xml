@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="im.iflytek.com.imrecorddemo.MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="587dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:weightSum="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1">
+
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="音量大小："
+            android:enabled="false"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="57dp" />
+
+        <TextView
+            android:id="@+id/voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0000"
+            tools:layout_editor_absoluteX="86dp"
+            tools:layout_editor_absoluteY="57dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/startrecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="开始录音"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="115dp" />
+
+            <Button
+                android:id="@+id/endrecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="录音结束"
+                tools:layout_editor_absoluteX="233dp"
+                tools:layout_editor_absoluteY="115dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="录音播放"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="282dp" />
+
+
+        <Button
+            android:id="@+id/playrecord"
+            android:layout_width="321dp"
+            android:layout_height="48dp"
+            android:text="播放录音"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="373dp" />
+
+        <LinearLayout
+            android:layout_width="317dp"
+            android:layout_height="117dp"
+            android:orientation="vertical"
+            android:layout_weight="0.51"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/makeMsg"
+                android:layout_width="327dp"
+                android:layout_height="wrap_content"
+                android:text="消息构建" />
+
+            <TextView
+                android:id="@+id/msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="结果显示" />
+
+            <Button
+                android:id="@+id/sendMsg"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:text="语音发送,并转换文字" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

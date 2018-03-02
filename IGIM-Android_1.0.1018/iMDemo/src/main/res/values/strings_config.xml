@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+    <!--注册用户为 余慧君，账号：shu_yu8990@163.com-->
+    <string name="imcall_private_app_id">9840c5fe591e400d8edb08c5bf449c56</string>
+    <!--注册用户为 徐啟东-->
+    <!--<string name="private_app_id">203747928c4b48fbbd90e6e0eb0654cb</string>-->
+
+    <string-array name="encryption_mode_values">
+        <item>AES-128-XTS</item>
+        <item>AES-256-XTS</item>
+    </string-array>
+
+    <string-array
+        name="imcall_string_array_resolutions">
+        <item>160x120</item> // 120P
+        <item>320x180</item> // 180P
+        <item>320x240</item> // 240P the default one
+        <item>640x360</item> // 360P
+        <item>640x480</item> // 480P
+        <item>1280x720</item> // 720P
+    </string-array>
+
+    <string-array
+        name="imcall_string_array_frame_rate">
+        <item>15</item> // 120P
+        <item>15</item> // 180P
+        <item>15</item> // 240P
+        <item>15</item> // 360P
+        <item>15</item> // 480P
+        <item>15</item> // 720P
+    </string-array>
+
+    <string-array
+        name="imcall_string_array_bit_rate">
+        <item>80</item> // 120P
+        <item>160</item> // 180P
+        <item>200</item> // 240P
+        <item>400</item> // 360P
+        <item>500</item> // 480P
+        <item>1000</item> // 720P
+    </string-array>
+
+    <string name="imcall_legal_channel_name_characters">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&amp;()+,-:;&lt;=.>?@[]^_`{|}~</string>
+
+</resources>

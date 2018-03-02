@@ -1,0 +1,42 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.iflytek.im.demo.ui.activity.MoreGroupInfoActivity">
+
+    <item
+        android:id="@+id/exitGroup"
+        android:orderInCategory="100"
+        android:title="退出群组"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/addGroup"
+        android:orderInCategory="100"
+        android:title="添加成员"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/kick_grouper"
+        android:orderInCategory="100"
+        android:title="踢除成员"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/removeGroup"
+        android:orderInCategory="100"
+        android:title="解散该群"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/appoint_mgr"
+        android:orderInCategory="100"
+        android:title="设置管理员"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/transfer_owner"
+        android:orderInCategory="100"
+        android:title="移交群主"
+        app:showAsAction="never" />
+
+</menu>

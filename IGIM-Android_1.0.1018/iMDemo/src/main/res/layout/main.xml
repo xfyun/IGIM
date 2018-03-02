@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+       <include
+        android:id="@+id/main_header"
+        layout="@layout/main_header" 
+        android:visibility="visible"
+        />
+       <include
+        android:id="@+id/group_show_header"
+        layout="@layout/group_show_header" 
+        android:visibility="gone"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_moremenu_back"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/bodylayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_moremenu_back"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/converTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="会话"
+                android:textColor="@drawable/text_color"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/friendTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="好友"
+                android:textColor="@drawable/text_color"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/disGroupTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="讨论组"
+                android:textColor="@drawable/text_color"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/groupTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="群组"
+                android:textColor="@drawable/text_color"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/cursor"
+            android:layout_width="50dp"
+            android:layout_height="6dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/meitu" />
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/noNetWork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+    
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vPager"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1.0"
+        android:background="#000000"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+
+</LinearLayout>

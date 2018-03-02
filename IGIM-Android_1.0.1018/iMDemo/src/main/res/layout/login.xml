@@ -1,0 +1,257 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/button_regist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:text="@string/register"
+        android:textColor="#fff"
+        android:textSize="16.0sp" />
+
+    <ImageView
+        android:id="@+id/loginbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/login_pic" />
+
+    <LinearLayout
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/appid_edit"
+                style="@style/cusur_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/white"
+                android:cursorVisible="true"
+                android:hint="@string/username"
+                android:padding="8dp"
+                android:selectAllOnFocus="true"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="18sp" >
+
+                <requestFocus android:background="@color/black"/>
+            </EditText>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="#ffc0c3c4" />
+
+            <EditText
+                android:id="@+id/password_edit"
+                style="@style/cusur_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/password"
+                android:maxLength="16"
+                android:padding="8dp"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="18sp" >
+            </EditText>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buton_login"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30.0dp"
+            android:layout_marginRight="30.0dp"
+            android:layout_marginTop="24.0dp"
+            android:background="@drawable/chat_send_button_bg"
+            android:ems="10"
+            android:paddingTop="5.0dip"
+            android:text="@string/login"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/auto_save_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:button="@null"
+            android:checked="true"
+            android:drawableLeft="@drawable/checkbox_bg1"
+            android:drawablePadding="4.0dip"
+            android:text="记住密码"
+            android:textColor="#ffffffff"
+            android:textSize="12.0sp" />
+        <ImageView
+            android:id="@+id/login_anim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/login_anim"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/more_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/more"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/login_moremenu_back"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/more_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5.0dip"
+                android:layout_toLeftOf="@+id/more_text"
+                android:clickable="false"
+                android:src="@drawable/login_more_up" />
+
+            <TextView
+                android:id="@+id/more_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="更多登陆选项"
+                android:textColor="#ffc6e6f9"
+                android:textSize="14.0sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/morehidebottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_moremenu_back"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="#ff005484" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="#ff0883cb" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginTop="12.0dip"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@+id/hide_login"
+                    android:layout_width="1.0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.0"
+                    android:background="@null"
+                    android:button="@null"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/checkbox_bg1"
+                    android:drawablePadding="4.0dip"
+                    android:text="隐身登陆"
+                    android:textColor="#ffc6e6f9"
+                    android:textSize="12.0sp" />
+
+                <CheckBox
+                    android:id="@+id/silence_login"
+                    android:layout_width="1.0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:background="@null"
+                    android:button="@null"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/checkbox_bg1"
+                    android:drawablePadding="4.0dip"
+                    android:text="静音登录"
+                    android:textColor="#ffc6e6f9"
+                    android:textSize="12.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18.0dip"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginTop="18.0dip"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@+id/accept_accounts"
+                    android:layout_width="1.0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.0"
+                    android:background="@null"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableLeft="@drawable/checkbox_bg1"
+                    android:drawablePadding="4.0dip"
+                    android:singleLine="true"
+                    android:text="允许手机/电脑同时在线"
+                    android:textColor="#ffc6e6f9"
+                    android:textSize="12.0sp" />
+
+                <CheckBox
+                    android:id="@+id/accept_troopmsg"
+                    android:layout_width="1.0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:background="@null"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableLeft="@drawable/checkbox_bg1"
+                    android:drawablePadding="4.0dip"
+                    android:text="接受群消息"
+                    android:textColor="#ffc6e6f9"
+                    android:textSize="12.0sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

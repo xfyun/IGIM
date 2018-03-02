@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.iflytek.im.demo"
+    android:versionCode="1120010"
+    android:versionName="1.12.0010_phone">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="andorid.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <application
+        android:name=".ImApplication"
+        android:icon="@drawable/logo_300_5"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <!-- 下载基础服务 -->
+
+
+        <service
+            android:name="com.iflytek.autoupdate.IFlytekDownloadService"
+            android:enabled="true"
+            android:process=":IFlytekDownloadService" />
+
+        <receiver android:name=".receiver.NetWorkChangeBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="IFLYTEK_APPKEY"
+            android:value="" />
+        <meta-data
+            android:name="IFLYTEK_CHANNEL"
+            android:value="" />
+
+        <!-- 版本更新activity -->
+        <activity
+            android:name="com.iflytek.autoupdate.IFlytekUpdateDialog"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:label="@string/title_activity_qq"
+            android:theme="@style/AppTheme.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.activity.RegisterActivity" />
+        <activity android:name=".ui.activity.GroupShowActivity" />
+        <activity android:name=".ui.activity.MoreGroupInfoActivity" />
+        <activity android:name=".ui.activity.CreateGroupActivity" />
+        <activity android:name=".ui.activity.JoinGroupActivity" />
+        <activity android:name=".ui.activity.KickGrouperActivity" />
+        <activity android:name=".ui.activity.SetGroupManagerActivity" />
+        <activity android:name=".ui.activity.AddGroupManagerActivity" />
+        <activity android:name=".ui.activity.TransferOwnerActivity" />
+        <activity
+            android:name=".ui.activity.GroupMemberAddActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".ui.activity.ImageWallActivity" />
+        <activity
+            android:name=".ui.activity.ImageShowActivity"
+            android:theme="@style/AppTheme.Fullscreen" />
+        <activity android:name=".ui.activity.SmallVideoRecorderActivity" />
+        <activity android:name=".ui.activity.GroupNotifyActivity" />
+        <activity
+            android:name=".ui.activity.TalkActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"></activity>
+        <activity android:name=".ui.activity.ShareActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.SEND" />
+                <data android:mimeType="text/plain" /> 
+                <!--<data android:mimeType="image/jpeg"/>
+                <data android:mimeType="image/jpg"/>
+                <data android:mimeType="image/png"/>-->
+                <!-- <data android:mimeType="application/zip"/>
+                <data android:mimeType="application/rar"/>
+                <data android:mimeType="audio/amr"/> -->
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.MainActivity">
+        </activity>
+
+        <activity
+            android:name=".ui.activity.AboutActivity"
+            android:label="@string/title_activity_about" />
+
+        <activity
+            android:name=".ui.activity.LocalSearchActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+<!--
+        <activity
+            android:name=".av.ui.activities.CallActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="locked"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+
+        <activity
+            android:name=".av.ui.activities.MultiCallActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="locked"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <activity
+            android:name=".av.ui.activities.MultiCallActivity2"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="locked"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <activity
+            android:name=".av.ui.activities.InviteActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="locked" />-->
+    </application>
+
+</manifest>

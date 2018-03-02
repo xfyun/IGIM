@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" >
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.MainActivity" parent="AppTheme.NoActionBar" >
+        <item name="android:actionOverflowButtonStyle">@style/AppOverflowButton</item>
+        <item name="actionOverflowMenuStyle">@style/AppOverflowMenu</item>
+    </style>
+
+    <style name="AppTheme.Fullscreen" parent="AppTheme.NoActionBar" >
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.PopupOverlay.Dark" parent="ThemeOverlay.AppCompat" />
+
+    <style name="AppTheme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppTheme.ChatActivity" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/Animation.Activity.Translucent.Style</item>
+    </style>
+
+    <style name="AppTheme.ErrorTextAppearance" parent="TextAppearance.Design.Error" >
+        <item name="android:textColor">@color/red_500</item>
+    </style>
+
+    <style name="Animation.Activity.Translucent.Style" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/slide_in_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
+    <style name="AppOverflowMenu" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownWidth">wrap_content</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+
+    <style name="AppOverflowButton" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:contentDescription">menu</item>
+        <item name="android:src">@drawable/ic_add_white_24dp</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>     <!-- 设置未浮动窗口 -->
+        <item name="android:windowFrame">@null</item>         <!-- 设置无边框 -->
+        <item name="android:windowNoTitle">true</item>        <!-- 设置无标题 -->
+        <item name="android:backgroundDimEnabled">true</item> <!-- 设置屏幕变暗 -->
+    </style>
+
+    <style name="anim_popup_dir">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
+
+    <style name="cusur_black" parent="@android:style/Theme.Black" />
+
+    <!-- 录音对话框 <style name="Theme_AudioDialog"> -->
+    <style name="Theme_AudioDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="ChatDetailTextView" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">#000000</item>
+    </style>
+
+    <style name="SelectableItemForeground">
+        <item name="android:foreground">@drawable/selectable_item_background</item>
+    </style>
+
+    <style name="SelectableItemForeground.Light">
+        <item name="android:foreground">@drawable/selectable_item_background_light</item>
+    </style>
+
+    <style name="SelectableItemBackground">
+        <item name="android:background">@drawable/selectable_item_background</item>
+    </style>
+
+    <style name="SelectableItemBackground.Light">
+        <item name="android:background">@drawable/selectable_item_background_light</item>
+    </style>
+
+    <style name="SelectableItemBackground.Borderless">
+        <item name="android:background">@drawable/selectable_item_background</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="imcall_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="imcall_FullscreenTheme" parent="imcall_AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="imcall_NotificationUIText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowColor">@color/imcall_transparent_75_white</item>
+    </style>
+
+</resources>

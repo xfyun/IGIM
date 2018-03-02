@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+    <ImageView
+        android:id="@+id/incall_user_icon"
+        android:src="@drawable/ic_launcher"
+        android:layout_marginTop="100dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/incall_user_name"
+        android:text="@string/imcall_user_name_example"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:layout_below="@id/incall_user_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/view_incall_wait"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/btn_accept"
+            android:text="@string/imcall_accept"
+            android:background="@color/imcall_accept_bg"
+            android:textColor="@color/imcall_text_white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/btn_reject"
+            android:text="@string/imcall_reject"
+            android:background="@color/imcall_reject_bg"
+            android:textColor="@color/imcall_text_white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_incall"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <ImageButton
+            android:id="@+id/btn_hangup"
+            android:src="@drawable/ic_call_end_white_36dp"
+            android:background="@drawable/btn_hangup_selector"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/incall_state"
+        android:text="@string/imcall_state"
+        android:padding="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/incall_user_name"
+        android:layout_alignLeft="@+id/incall_user_name"
+        android:layout_alignStart="@+id/incall_user_name" />
+</RelativeLayout>

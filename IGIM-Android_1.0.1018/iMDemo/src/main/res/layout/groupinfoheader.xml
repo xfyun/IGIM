@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/group_header"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_hight"
+    android:background="@color/top_bg_color" >
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center" 
+        android:textSize="16sp"
+        android:text="DemoUserGroup(群号:10000)"
+        android:textColor="#ffffff"/>
+    
+    <TextView
+        android:id="@+id/groinfo_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_alignBaseline="@id/header"
+        android:textSize="13sp"
+        android:text="返回"
+        android:textColor="#ffffff"/>
+    
+    
+</RelativeLayout>

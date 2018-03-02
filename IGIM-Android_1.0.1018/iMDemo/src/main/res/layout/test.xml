@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+     <CheckBox
+            android:id="@+id/auto_save_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:button="@null"
+            android:checked="true"
+            android:drawableLeft="@drawable/checkbox_selected"
+            android:drawablePadding="4.0dip"
+            android:text="记住密码"
+            android:textColor="#ffffffff"
+            android:textSize="12.0sp" />
+
+     <Spinner
+         android:id="@+id/spinner1"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content" />
+
+</LinearLayout>

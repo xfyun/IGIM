@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.iflytek.im.demo.ui.fragment.FriendFragment">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/friend_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <!-- 这个是浮动的提示 ，配合字母栏实现放大浮动提示滑动到哪个字母-->
+    <!--下面的自定义属性都是默认的,可以不写-->
+    <com.iflytek.im.demo.ui.view.QuickSideBarTipsView
+        android:id="@+id/quickSideBarTipsView"
+        android:layout_width="@dimen/height_quicksidebartips"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/quickSideBarView"
+        app:sidebarBackgroundColor="@color/colorPrimary"
+        app:sidebarTextColor="@android:color/white"
+        app:sidebarTextSize="@dimen/textSize_quicksidebartips" />
+    <!-- 这个是字母栏的提示 -->
+    <!--下面的自定义属性都是默认的,可以不写-->
+    <com.iflytek.im.demo.ui.view.QuickSideBarView
+        android:id="@id/quickSideBarView"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="1dp"
+        app:sidebarItemHeight="@dimen/height_quicksidebaritem"
+        app:sidebarTextColor="@android:color/black"
+        app:sidebarTextColorChoose="@color/colorPrimary"
+        app:sidebarTextSize="@dimen/textSize_quicksidebar"
+        app:sidebarTextSizeChoose="@dimen/textSize_quicksidebar_choose" />
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:id="@+id/call_bottom_incall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btn_accept"
+        android:text="@string/imcall_accept"
+        android:background="@color/imcall_accept_bg"
+        android:textColor="@color/imcall_text_white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+    <Button
+        android:id="@+id/btn_reject"
+        android:text="@string/imcall_reject"
+        android:background="@color/imcall_reject_bg"
+        android:textColor="@color/imcall_text_white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+</LinearLayout>

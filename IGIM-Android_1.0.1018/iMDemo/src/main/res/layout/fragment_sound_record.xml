@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.iflytek.im.demo.ui.fragment.SoundRecordFragment">
+
+    <View
+        android:id="@+id/voice_bg_view"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/circular_outline_grey_200" />
+
+    <ImageView
+        android:id="@+id/voice_icon"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:clickable="true"
+        android:scaleType="center"
+        android:src="@drawable/ic_keyboard_voice_grey_600_36dp" />
+
+    <TextView
+        android:id="@+id/voice_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/voice_icon"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:text="@string/voice_press_to_record" />
+</RelativeLayout>

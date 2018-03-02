@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:showAsAction="always"
+    tools:context="com.iflytek.im.demo.ui.activity.MainActivity" >
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search_white_24dp"
+        android:orderInCategory="100"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/action_add_friend"
+        android:orderInCategory="100"
+        android:enabled="false"
+        android:title="@string/action_add_friend"
+        app:showAsAction="never"  />
+
+    <item
+        android:id="@+id/action_add_small_group"
+        android:orderInCategory="100"
+        android:title="@string/action_add_small_group"
+        app:showAsAction="never"  />
+
+    <item
+        android:id="@+id/action_join_group"
+        android:orderInCategory="100"
+        android:title="@string/action_join_group"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_add_group"
+        android:orderInCategory="100"
+        android:title="@string/action_add_group"
+        app:showAsAction="never"  />
+
+</menu>

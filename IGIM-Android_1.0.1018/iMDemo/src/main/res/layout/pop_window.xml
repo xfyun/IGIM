@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:paddingLeft="10dp"
+            android:text="请选择"
+            android:textColor="#ff2525"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#969696" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#00000000"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
+            android:text="第一个功能"
+            android:textColor="#2a2a2a"
+            android:textSize="15sp" />
+
+        <View
+            android:id="@+id/hr1"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#a6a6a6" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#00000000"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
+            android:text="第二个功能"
+            android:textColor="#2a2a2a"
+            android:textSize="15sp" />
+
+        <View
+            android:id="@+id/hr2"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#a6a6a6" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#00000000"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
+            android:text="第三个功能"
+            android:textColor="#2a2a2a"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

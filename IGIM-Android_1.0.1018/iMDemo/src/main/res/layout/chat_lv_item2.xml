@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical"
+    android:padding="10dip">
+
+
+    <TextView
+        android:id="@+id/chat_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="09-25 12:00"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chat_time">
+
+        <LinearLayout
+            android:id="@+id/chat_from_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@color/transparent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/name_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="xiangsun4"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/iamg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/chatfrom_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/iv_chat_from" />
+                <LinearLayout
+                    android:id="@+id/chatfrom_txt_img_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/chatfrom_bg"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/chatfrom_img_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="3dp"
+                                android:contentDescription="图片丢失"
+                                android:scaleType="fitCenter"
+                                />
+                            <ImageView
+                                android:id="@+id/chatfrom_video_play_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/play_button"
+                                />
+
+                        </FrameLayout>
+
+
+                        <TextView
+                            android:id="@+id/chatfrom_voice_dur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@color/transparent"
+                            android:textColor="@color/gray"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="3dp"
+                            />
+                        <FrameLayout
+                            android:id="@+id/from_video_Fl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <VideoView
+                                android:id="@+id/chatfrom_video_content"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent" />
+                        </FrameLayout>
+                    </LinearLayout>
+                    <io.github.rockerhieu.emojicon.EmojiconTextView
+                        android:id="@+id/chatfrom_txt_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:autoLink="web"
+                        android:textColor="@color/gray"
+                        android:layout_marginTop="4dp"
+                        android:layout_gravity="center"
+                        />
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tip_msg_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="golangdfsdfsdfsdfdf加入该群"
+            android:background="@drawable/tip_msg_background"
+            android:gravity="center"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/chat_to_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:background="@color/transparent"
+            android:orientation="horizontal"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                >
+                <ImageView
+                    android:id="@+id/send_msg_hint"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true" />
+                <TextView
+                    android:id="@+id/other_side_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone"
+                    />
+            </RelativeLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/chatto_txt_img_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="100"
+                android:background="@drawable/chatto_bg"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="right">
+
+                    <io.github.rockerhieu.emojicon.EmojiconTextView
+                        android:id="@+id/chatto_voice_dur"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_gravity="right|center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+                            android:id="@+id/chatto_img_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="图片丢失"
+                            android:layout_gravity="right|center"
+                            android:layout_marginTop="3dp"
+                            android:scaleType="fitCenter"
+                            />
+                        <ImageView
+                            android:id="@+id/chatto_video_play_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/play_button"
+                            />
+
+
+                    </FrameLayout>
+
+
+
+                    <FrameLayout
+                        android:id="@+id/to_video_Fl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        >
+
+                        <VideoView
+                            android:id="@+id/chatto_video_content"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <io.github.rockerhieu.emojicon.EmojiconTextView
+                    android:id="@+id/chatto_text_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:autoLink="web"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray"
+                    android:layout_marginTop="4dp"
+                    />
+
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/chatto_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:src="@drawable/iv_head_to" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

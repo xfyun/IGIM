@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".agora.ui.ChatActivity"
+             android:keepScreenOn="true">
+
+    <com.iflytek.cloud.imcall.agora.ui.GridVideoViewContainer
+        android:id="@+id/imcall_grid_video_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ViewStub
+        android:id="@+id/imcall_small_video_view_dock"
+        android:inflatedId="@id/imcall_small_video_view_dock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout="@layout/imcall_small_video_view_dock" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/imcall_channel_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="6dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/white" />
+
+        <com.iflytek.cloud.imcall.agora.propeller.ui.AGLinearLayout
+            android:id="@+id/imcall_bottom_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/imcall_bottom_action_end_call"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="center"
+                android:src="@drawable/imcall_btn_endcall"
+                android:onClick="onEndCallClicked" />
+
+            <RelativeLayout
+                android:id="@+id/imcall_bottom_action_container"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/imcall_btn_message"
+                    android:onClick="onBtn0Clicked" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_centerInParent="true">
+
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="center"
+                        android:src="@drawable/imcall_btn_voice"
+                        android:onClick="onVoiceChatClicked" />
+
+                    <ImageView
+                        android:id="@+id/imcall_customized_function_id"
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="center"
+                        android:src="@drawable/imcall_btn_switch_camera"
+                        android:onClick="onCustomizedFunctionClicked" />
+
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="center"
+                        android:src="@drawable/imcall_btn_mute"
+                        android:onClick="onVoiceMuteClicked" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/imcall_btn_filter"
+                    android:onClick="onBtnNClicked" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/imcall_msg_input_container"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:orientation="horizontal"
+                android:background="@color/imcall_dark_black">
+
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"
+                    android:onClick="onClickHideIME"
+                    android:src="@drawable/imcall_btn_keyboard_hide" />
+
+                <EditText
+                    android:id="@+id/imcall_msg_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="20"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:layout_height="match_parent"
+                    android:hint="@string/imcall_msg_say_something"
+                    android:textColorHint="@android:color/white"
+                    android:imeOptions="actionSend"
+                    android:imeActionLabel="@string/imcall_label_send" />
+
+            </LinearLayout>
+
+        </com.iflytek.cloud.imcall.agora.propeller.ui.AGLinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/imcall_msg_list"
+            android:layout_width="272dp"
+            android:layout_height="144dp"
+            android:layout_above="@id/imcall_bottom_container" />
+
+    </RelativeLayout>
+</FrameLayout>

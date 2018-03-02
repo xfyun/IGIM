@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:id="@+id/tv_content_alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="20dp"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tv_first_action_alert"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center_vertical|end"
+        style="@style/SelectableItemBackground"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:id="@+id/tv_second_action_alert"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center_vertical|end"
+        style="@style/SelectableItemBackground"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:id="@+id/tv_cancel_panel"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical|end"
+        android:textColor="@color/black_26p"
+        android:textAllCaps="true"
+        style="@style/SelectableItemBackground"/>
+
+</LinearLayout>

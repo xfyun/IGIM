@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="群组名称"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/gname"
+                android:layout_weight="12"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginRight="16dp"
+                android:maxWidth="12dp"
+                android:background="@drawable/textview_border"
+                android:lines="1"
+                android:paddingLeft="5dp"
+                android:textColor="#ff1d1d1d"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="群组类型"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/groupType"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="12">
+
+                <RadioButton
+                    android:id="@+id/disGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="讨论组"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="群组"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </RadioGroup>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/createGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/addgroups_button"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="创建"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"/>
+</LinearLayout>

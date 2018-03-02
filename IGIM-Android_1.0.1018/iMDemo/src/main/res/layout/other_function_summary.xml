@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:gravity="center"
+    android:background="@color/transparent"
+    android:visibility="gone"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
+    tools:showIn="@layout/chat_main">
+    <!--
+        TableLayout减去了
+        android:stretchColumns="0,1,2,3"
+        android:shrinkColumns="0,1,2,3"
+
+    -->
+   <TableRow
+       android:layout_width="match_parent"
+       android:layout_gravity="center_horizontal"
+       android:layout_marginTop="8dp"
+       android:layout_marginBottom="5dp"
+       >
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_gravity="left"
+           android:layout_marginLeft="10dp"
+           android:gravity="center_horizontal"
+           >
+
+           <ImageButton
+
+               android:id="@+id/small_video"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:scaleType="centerCrop"
+               android:background="@color/transparent"
+               android:src="@drawable/smll_video"
+               android:layout_gravity="center_horizontal"
+               />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="小视频"
+               android:layout_marginTop="5dp"
+               android:layout_gravity="center_horizontal"
+               />
+
+       </LinearLayout>
+<!--
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_gravity="left"
+           android:gravity="center_horizontal"
+          >
+
+           <ImageButton
+               android:id="@+id/my_collection"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:scaleType="centerCrop"
+               android:background="@color/transparent"
+               android:src="@drawable/my_collection"
+               android:layout_gravity="center_horizontal"
+               />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="我的收藏"
+               android:layout_marginTop="5dp"
+               android:layout_gravity="center_horizontal"
+
+               />
+
+
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_gravity="left"
+           >
+           <ImageButton
+
+               android:id="@+id/location"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:scaleType="centerCrop"
+               android:background="@color/transparent"
+               android:src="@drawable/location"
+               android:layout_gravity="center_horizontal"
+               />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="位置"
+               android:layout_marginTop="5dp"
+               android:layout_gravity="center_horizontal"
+               />
+
+       </LinearLayout>
+
+-->
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_gravity="left"
+           android:gravity="center_horizontal"
+           >
+           <ImageButton
+
+               android:id="@+id/picture"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:scaleType="centerCrop"
+               android:background="@color/transparent"
+               android:src="@drawable/picture"
+               android:layout_gravity="center_horizontal"
+               />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="图片"
+               android:layout_marginTop="5dp"
+               android:layout_gravity="center_horizontal"
+               />
+
+       </LinearLayout>
+
+
+   </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_horizontal">
+            <ImageButton
+
+                android:id="@+id/chat_by_video"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerCrop"
+                android:background="@color/transparent"
+                android:src="@drawable/chat_with_video"
+                android:layout_gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="视频聊天"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <ImageButton
+
+                android:id="@+id/chat_by_voice"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerCrop"
+                android:background="@color/transparent"
+                android:src="@drawable/chat_with_voice"
+                android:layout_gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="语音聊天"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+        </LinearLayout>
+
+
+
+   </TableRow>
+</TableLayout>

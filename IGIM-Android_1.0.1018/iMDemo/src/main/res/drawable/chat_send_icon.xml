@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:drawable="@drawable/circular_green_500" />
+    <item android:drawable="@drawable/ic_send_white_18dp"
+        android:top="9dp"
+        android:bottom="9dp"
+        android:left="9dp"
+        android:right="9dp" />
+</layer-list>

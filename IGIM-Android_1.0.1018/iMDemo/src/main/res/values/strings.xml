@@ -1,0 +1,161 @@
+<resources>
+
+    <string name="app_name">讯飞云通讯</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_qq">讯飞云通讯</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="edittext_notice_0">可长按此处…</string>
+    <string name="send">发送</string>
+    <string name="delete">删除</string>
+    <string name="copy">复制</string>
+    <string name="talkwith">与</string>
+    <string name="talking">对话中</string>
+    <string name="register">注册</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="str_recorder_normal">按住   说话</string>
+    <string name="str_recorder_recording">松开   结束</string>
+    <string name="str_recorder_want_cancel">滑动手指，取消录音</string>
+    <string name="Register_account">注册账号</string>
+    <string name="btn_press_and_talk">按住 说话 或 点击一下</string>
+    <string name="btn_release_and_send">松开 发送</string>
+    <string name="btn_press_to_record">按住拍摄</string>
+    <string name="btn_voice_to_text">语音转写文字发送</string>
+    <string name="title_person_talk">与%s对话中</string>
+
+    <!--时间-->
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="yesterday">昨天</string>
+
+    <string name="time_just">刚刚</string>
+    <string name="time_minutes_age">分钟前</string>
+    <string name="time_hours_age">小时前</string>
+    <string name="time_before_yesterday">前天</string>
+
+    <array name="time_period">
+        <item>凌晨</item>
+        <item>早晨</item>
+        <item>上午</item>
+        <item>中午</item>
+        <item>下午</item>
+        <item>傍晚</item>
+        <item>晚上</item>
+        <item>深夜</item>
+    </array>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!--主界面的标题-->
+    <string name="title_conversation">会话</string>
+    <string name="title_friend">联系人</string>
+    <string name="title_group">群组</string>
+    <string name="title_group_work">讨论组</string>
+
+    <!--ConversationFragment-->
+    <string name="chats_top">置顶的对话</string>
+    <string name="chats_normal">对话列表</string>
+    <string name="alert_delete_chat_title">删除对话</string>
+    <string name="alert_delete_chat_content">在您的设备中，所有相关的对话记录都将被彻底删除，确定要继续吗？</string>
+    <string name="middle_bracket_image">[图片]</string>
+    <string name="middle_bracket_audio">[语音]</string>
+    <!--空状态下的提示-->
+    <string name="empty_state_chat_list_1">还没有对话</string>
+    <string name="empty_state_chat_list_2">快快去找朋友聊天吧</string>
+    <string name="toast_logout_success">您已注销成功</string>
+    <string name="toast_logout_fail">注销失败</string>
+    <string name="conversation_item_text_pic">[图片]</string>
+    <string name="conversation_item_text_audio">[语音]</string>
+    <string name="conversation_item_text_count_more">···</string>
+    <string name="toast_get_conversations_fail">获取会话列表失败</string>
+    <string name="chat_btn_send">发送</string>
+    <string name="action_information">详细信息</string>
+    <string name="action_logout">注销</string>
+    <string name="action_about">关于</string>
+    <string name="chat_text_hint">请输入内容</string>
+    <string name="voice_press_to_record">按住录音</string>
+    <string name="voice_release_to_send">释放发送</string>
+    <string name="voice_release_to_cancel">释放取消</string>
+    <string name="action_search">搜索</string>
+    <string name="title_activity_main3">MainActivity3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="nav_logout">注销</string>
+    <string name="nav_settings">设置</string>
+    <string name="action_add">新增</string>
+    <string name="action_add_friend">添加好友</string>
+    <string name="action_add_small_group">发起群聊</string>
+    <string name="action_add_group">新建群组</string>
+    <string name="nav_favorites">收藏夹</string>
+    <string name="nav_management">好友管理</string>
+    <string name="nav_me">我</string>
+    <string name="nav_about">关于</string>
+    <string name="nav_update">检查新版本</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="dialog_confirm">确认</string>
+    <string name="dialog_title_delete">删除</string>
+    <string name="dialog_delete_content">确认删除会话%1$s吗？</string>
+    <string name="action_send">发送</string>
+    <string name="title_activity_about">关于</string>
+    <string name="splash_bottom">天涯海角,相隔仅是弹指之间</string>
+    <string name="prompt_username">用户名</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_up_short">注册</string>
+    <string name="register_btn">注册</string>
+    <string name="title_activity_register">用户注册</string>
+    <string name="dialog_title_register_success">注册成功</string>
+    <string name="dialog_content_register_success">您已注册成功，是否前往登录界面?</string>
+    <string name="error_input_username">请输入用户名</string>
+    <string name="error_input_password">请输入密码</string>
+    <string name="dialog_title_register_fail">注册失败</string>
+    <string name="dialog_content_register_fail">您已注册过该账号，是否前往登录界面</string>
+    <string name="action_done">完成</string>
+    <string name="search_hint">输入个人ID、群ID或者群昵称</string>
+    <string name="call_calling">正在通话</string>
+    <string name="multi_call_calling">正在多人通话</string>
+    <string name="action_join_group">加入群组</string>
+
+
+    <string name="imcall_app_name">IMCall</string>
+    <string name="imcall_accept">接听</string>
+    <string name="imcall_reject">拒绝</string>
+    <string name="imcall_user_name_example">Android</string>
+    <string name="imcall_state">正在接通…</string>
+    <string name="imcall_outcall_user_name_example">IMXQD</string>
+    <string name="imcall_outcall_state">正在呼叫…</string>
+
+    <string name="imcall_label_settings">Settings</string>
+
+    <string name="imcall_msg_welcome_message">Welcome to Open Video Call!</string>
+
+    <string name="imcall_label_channel_name_hint">Channel name</string>
+
+    <string name="imcall_label_encryption_key_hint">Encryption key</string>
+
+    <string name="imcall_label_join">Join</string>
+
+    <string name="imcall_label_confirm">Confirm</string>
+
+    <string name="imcall_label_send">Send</string>
+
+    <string name="imcall_msg_say_something">Say something…</string>
+
+    <string name="imcall_msg_no_network_connection">No network connection, please check the network settings</string>
+
+    <string name="imcall_label_title_resolution">Resolution\n(Width * Height)</string>
+    <string name="imcall_label_title_frame_rate">Frame Rate\n(fps)</string>
+    <string name="imcall_label_title_bit_rate">Bit Rate\n(kbps)</string>
+
+    // DO NOT TRANSLATE
+    <string name="imcall_bit_rate_value_with_unit">%d kbps</string>
+    <string name="imcall_frame_rate_value_with_unit">%d fps</string>
+    <string name="imcall_toast_not_support">暂未实现</string>
+
+</resources>

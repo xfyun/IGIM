@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chat_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.iflytek.im.demo.ui.view.DropdownListView
+        android:id="@+id/message_chat_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:background="@color/white"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@null"
+        android:listSelector="@color/transparent" />
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/chat_bottom_shape" >
+
+            <Button
+                android:id="@+id/voice_msg"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dip"
+                android:background="@drawable/voice_msg"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/keyboard"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dip"
+                android:background="@drawable/keyboard"
+                android:visibility="gone" />
+
+            <com.iflytek.im.demo.ui.view.MsgEditText
+                android:id="@+id/input_sms"
+                style="@style/cusur_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dip"
+                android:layout_marginRight="7dip"
+                android:layout_toLeftOf="@+id/image_face"
+                android:layout_toRightOf="@id/voice_msg"
+                android:background="@null"
+                android:hint="@string/edittext_notice_0"
+                android:padding="4dip"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:maxLines="2"
+                android:maxLength="300"
+                >
+                 <requestFocus android:background="@color/black"/>
+            </com.iflytek.im.demo.ui.view.MsgEditText>
+
+            <Button
+                android:id="@+id/send_sms"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@id/input_sms"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/input_sms"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/button_shape"
+                android:gravity="center"
+                android:text="@string/send"
+                android:textColor="#578fbe"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/other_func"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/other_func"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/image_face"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="13dip"
+                android:layout_toLeftOf="@id/other_func"
+                android:src="@drawable/chat_emo_normal"
+                android:visibility="visible" />
+
+            <com.iflytek.im.demo.ui.view.AudioRecorderButton
+                android:id="@+id/sound_recording"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dip"
+                android:layout_marginRight="16dip"
+                android:layout_toLeftOf="@+id/image_face"
+                android:layout_toRightOf="@id/voice_msg"
+                android:background="@drawable/button_shape"
+                android:text="@string/btn_press_and_talk"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/gray" />
+
+        <include
+            android:id="@+id/chat_face_container"
+            layout="@layout/chat_face_container"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/other_func_detail"
+            layout="@layout/other_function_summary" />
+    </LinearLayout>
+
+</RelativeLayout>

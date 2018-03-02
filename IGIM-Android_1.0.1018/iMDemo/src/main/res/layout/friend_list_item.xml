@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/friend_list_item"
+    android:layout_width="fill_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal"
+    android:padding="5dip"
+    android:paddingBottom="15dp" >
+
+    <TextView
+        android:id="@+id/friendName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:layout_alignParentLeft="true"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/manager_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="管理员"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:textColor="@color/gray"
+        android:textSize="16sp"
+        android:background="@drawable/shape_corner"
+        android:layout_marginRight="10dp"
+        />
+</RelativeLayout>
